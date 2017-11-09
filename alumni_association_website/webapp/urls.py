@@ -3,5 +3,6 @@ from webapp import views
 
 
 urlpatterns = [
-    url(r'^home/', views.home_page, name="home_page"),
+    url(r'^$', views.home_page, name="home_page"),
+    url(r'^logout/$', views.logout, name="logout"),
 ]

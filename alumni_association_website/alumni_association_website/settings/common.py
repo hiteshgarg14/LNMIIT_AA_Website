@@ -17,7 +17,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(
     os.path.dirname(os.path.abspath(__file__))))
 PROJECT_ROOT = BASE_DIR  # Heroku Setup
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
-print(BASE_DIR)
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATIC_ROOT = os.path.join(BASE_DIR, 'collectstatic')  # Heroku Setup
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
