@@ -8,7 +8,7 @@
 <body>
      {% if request.user.is_authenticated %}
             {{  request.user.username }}
-        <a href="{% url 'logout' %}">logout</a>
+        <a href="{% url 'webapp_logout' %}">logout</a>
     {% else %}
         <a href="{% provider_login_url "linkedin" %}">LinkedIn</a>
     {% endif %}

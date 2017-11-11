@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # main app
     'webapp.apps.WebappConfig',
 
     # allauth Setup
@@ -128,7 +130,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 # auth and allauth settings
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/accounts/password/set/'
 SOCIALACCOUNT_QUERY_EMAIL = True
 ACCOUNT_EMAIL_VERIFICATION = "none"
 SOCIALACCOUNT_PROVIDERS = {
