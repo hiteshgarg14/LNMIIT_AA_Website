@@ -4,10 +4,14 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from allauth.account.views import PasswordSetView, PasswordChangeView
 from django.urls import reverse_lazy, reverse
-
+from allauth.socialaccount.models import SocialAccount
 
 def home_page(request):
-    return render(request, 'webapp/home_page.html')
+	linkedin_connected = False
+	if request.user.is_authenticated and SocialAccount.objects.filter(user=request.user):
+			linkedin_connected = True
+	return render(request, 'webapp/home_page.html',
+			{'linkedin_connected': linkedin_connected})
 
 
 @login_required

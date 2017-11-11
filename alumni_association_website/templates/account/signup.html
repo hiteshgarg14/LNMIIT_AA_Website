@@ -1,0 +1,19 @@
+
+<h1>Sign Up</h1>
+
+<p>Already have an account? Then please <a href="{{ login_url }}">sign in</a>.</p>
+
+{% include 'webapp/form_errors.html' %}
+
+<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+  {% csrf_token %}
+  <p><label for="id_email">E-mail:</label> <input type="email" name="email" placeholder="E-mail address" id="id_email" required /></p>
+<p><label for="id_username">Username:</label> <input type="text" name="username" maxlength="150" id="id_username" required autofocus="autofocus" placeholder="Username" minlength="1" /></p>
+<p><label for="id_password1">Password:</label> <input type="password" name="password1" placeholder="Password" id="id_password1" required /></p>
+<p><label for="id_password2">Password (again):</label> <input type="password" name="password2" placeholder="Password (again)" id="id_password2" required /></p>
+
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  <button type="submit">Sign Up &raquo;</button>
+</form>

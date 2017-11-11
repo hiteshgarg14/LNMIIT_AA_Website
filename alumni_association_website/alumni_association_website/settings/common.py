@@ -130,9 +130,12 @@ AUTHENTICATION_BACKENDS = (
 )
 
 # auth and allauth settings
+SOCIALACCOUNT_ADAPTER = 'webapp.adapter.CustomSocialAccountAdapter'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
 LOGIN_REDIRECT_URL = '/accounts/password/set/'
 SOCIALACCOUNT_QUERY_EMAIL = True
-ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 SOCIALACCOUNT_PROVIDERS = {
     'linkedin': {
         'SCOPE': [
@@ -149,3 +152,13 @@ SOCIALACCOUNT_PROVIDERS = {
         ]
     }
 }
+
+# EMAIL settings
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
+SERVER_EMAIL = os.environ.get('SERVER_EMAIL')
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
