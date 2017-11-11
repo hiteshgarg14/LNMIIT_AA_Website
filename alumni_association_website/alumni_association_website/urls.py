@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from webapp import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^', include('webapp.urls')),
+    url(r'^accounts/password/set/$', views.custom_password_set, name='custom_password_set'),
+    url(r'^accounts/password/change/$', views.custom_password_change, name='custom_password_change'),
     url(r'^accounts/', include('allauth.urls')),
-    url(r'^', include('webapp.urls'))
 ]
