@@ -1,19 +1,159 @@
 
-<h1>Sign Up</h1>
 
-<p>Already have an account? Then please <a href="{{ login_url }}">sign in</a>.</p>
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+</head>
+<body>
+
+
+
 
 {% include 'webapp/form_errors.html' %}
 
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  <p><label for="id_email">E-mail:</label> <input type="email" name="email" placeholder="E-mail address" id="id_email" required /></p>
+<!-- <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+  {% csrf_token %} -->
+ <!--  <p><label for="id_email">E-mail:</label> <input type="email" name="email" placeholder="E-mail address" id="id_email" required /></p>
 <p><label for="id_username">Username:</label> <input type="text" name="username" maxlength="150" id="id_username" required autofocus="autofocus" placeholder="Username" minlength="1" /></p>
+
 <p><label for="id_password1">Password:</label> <input type="password" name="password1" placeholder="Password" id="id_password1" required /></p>
-<p><label for="id_password2">Password (again):</label> <input type="password" name="password2" placeholder="Password (again)" id="id_password2" required /></p>
+<p><label for="id_password2">Password (again):</label> <input type="password" name="password2" placeholder="Password (again)" id="id_password2" required /></p> -->
+
+<!--   {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %} -->
+  <!-- <button type="submit">Sign Up &raquo;</button> -->
+<!-- </form> -->
+
+
+<div class="container">
+
+<form class="signup well form-horizontal" id="signup_form" method="post" action="{% url 'account_signup' %}">
+  {% csrf_token %}
+<fieldset>
+
+<!-- Form Name -->
+<legend><center><h3><b>Registration Form</b></h3></center></legend><br>
+
+<!-- Text input-->
+
+<!-- <div class="form-group">
+  <label class="col-md-4 control-label">First Name</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div> -->
+
+<!-- Text input-->
+
+<!-- <div class="form-group">
+  <label class="col-md-4 control-label" >Last Name</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+ -->
+  
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="id_username">Username</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+  <input class = "form-control" type="text" name="username" maxlength="150" id="id_username" required autofocus="autofocus" placeholder="Username" minlength="1" />
+
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label for="id_password1" class="col-md-4 control-label" >Password</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="password" class="form-control" name="password1" placeholder="Password" id="id_password1" required />
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label for="id_password2" class="col-md-4 control-label" >Confirm Password</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="password" class = "form-control" name="password2" placeholder="Password (again)" id="id_password2" required />
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+ <div class="form-group">
+  <label class="col-md-4 control-label" for="id_email">E-Mail</label>  
+
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  		<input type="email" name="email" placeholder="E-Mail Address" class="form-control" id="id_email" type="text" required/>
+    
+    </div>
+  </div>
+</div>
+
 
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <button type="submit">Sign Up &raquo;</button>
+
+<!-- Text input-->
+       
+
+<!-- Select Basic -->
+
+<!-- Success message -->
+<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
+
+<!-- Button -->
+<div class="form-group">
+<div class="col-lg-12">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+   <button type="submit" class="btn btn-warning" >SUBMIT <span class="glyphicon glyphicon-send"></span></button>
+  </div>
+</div>
+
+
+</div>
+
+<div class="text-align">
+  <p>I Already have an account? Then please <a href="{{ login_url }}">SignIn</a></p>
+</div>
+
+
+
+</fieldset>
 </form>
+</div>
+    </div><!-- /.container -->
+
+
+ </body>
+
+ </html>

@@ -73,6 +73,7 @@ body {
   margin-right:5px;
 }
 
+#success_message{ display: none;}
 
 .custom-css{
 
