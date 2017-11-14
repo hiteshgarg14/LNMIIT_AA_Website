@@ -1,11 +1,10 @@
-
-
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'webapp/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/style.css' %}">
 
 </head>
 </head>
@@ -52,7 +51,7 @@
 
 
 
-{% include 'webapp/form_errors.html' %}
+
 
 <!-- <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %} -->
@@ -81,7 +80,7 @@
 <!-- Text input-->
 
 <!-- <div class="form-group">
-  <label class="col-md-4 control-label">First Name</label>  
+  <label class="col-md-4 control-label">First Name</label>
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -93,7 +92,7 @@
 <!-- Text input-->
 
 <!-- <div class="form-group">
-  <label class="col-md-4 control-label" >Last Name</label> 
+  <label class="col-md-4 control-label" >Last Name</label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -102,11 +101,13 @@
   </div>
 </div>
  -->
-  
+
 <!-- Text input-->
 
+
+  {% include 'webapp/form_errors.html' %}
 <div class="form-group">
-  <label class="col-md-4 control-label" for="id_username">Username</label>  
+  <label class="col-md-4 control-label" for="id_username">Username</label>
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -120,7 +121,7 @@
 <!-- Text input-->
 
 <div class="form-group">
-  <label for="id_password1" class="col-md-4 control-label" >Password</label> 
+  <label for="id_password1" class="col-md-4 control-label" >Password</label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -132,7 +133,7 @@
 <!-- Text input-->
 
 <div class="form-group">
-  <label for="id_password2" class="col-md-4 control-label" >Confirm Password</label> 
+  <label for="id_password2" class="col-md-4 control-label" >Confirm Password</label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -143,14 +144,14 @@
 
 <!-- Text input-->
  <div class="form-group">
-  <label class="col-md-4 control-label" for="id_email">E-Mail</label>  
+  <label class="col-md-4 control-label" for="id_email">E-Mail</label>
 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
 
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
   		<input type="email" name="email" placeholder="E-Mail Address" class="form-control" id="id_email" type="text" required/>
-    
+
     </div>
   </div>
 </div>
@@ -161,7 +162,7 @@
   {% endif %}
 
 <!-- Text input-->
-       
+
 
 <!-- Select Basic -->
 
