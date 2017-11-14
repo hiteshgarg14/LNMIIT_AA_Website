@@ -3,19 +3,124 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../account/style.css">
 </head>
 <body>
-    {% if request.user.is_authenticated %}
-             {{  request.user.username }}
-         <a href="{% url 'webapp_logout' %}">logout</a>
-         {% if not linkedin_connected %}
-            Connect Account to <a href="{% provider_login_url "linkedin" %}">LinkedIn</a>
-        {% endif %}
-     {% else %}
-        <a href="{% url 'account_login' %}">Login/Signup</a>
-
+<!--  {% if request.user.is_authenticated %}
+         {{  request.user.username }}
+     <a href="{% url 'webapp_logout' %}">logout</a>
+     {% if not linkedin_connected %}
+        Connect Account to <a href="{% provider_login_url "linkedin" %}">LinkedIn</a>
     {% endif %}
+ {% else %}
+    <a href="{% url 'account_login' %}">Login/Signup</a>
+
+{% endif %} -->
+
+<div class="container" style="border:0px solid black;    width: 100%;">
+
+	<div style="background-image:url('https://d1dp92jzo8lsgh.cloudfront.net/assets/website/website-header-wide-0deac06c2130e2729cdc775f5ac2818c5120a17bc58d312b3b33dfaa8837f8d6.png');height: 300px;">
+
+		<div style="padding-top:32px;">
+	        <div class="enlarged-dark-text">Build Engaging Communities</div>
+	    </div>
+
+	   <div style="text-align: center; padding: 16px 0px;position:relative;">
+        <div class="custom_style">
+          Almaconnect helps you connect with your school / college / organization’s alumni network
+        </div>
+     
+      </div>
+
+
+	</div>
+
+	<div style="background-image:url('http://www.augusta.edu/alumni/images/alumni-hero-1.jpg');height: 625px;border:0px solid black;opacity: .4" class="margin-ten">
+	</div>
+
+	<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="border:0px solid black;margin-top: 5%;">
+			<div class="enlarged-light-text" ">
+		      <div>Connecting over <span class="enlarged-dark-text">1,000,000+ alumni</span> </div>
+		      <div>across <span class="enlarged-dark-text">2,000+ communities</span></div>
+		    </div>
+	</div>
+	
+
+	<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="border:0px solid black;background-color: radial-gradient(rgb(243,244,245));margin-top: 5%;"> 
+
+		<div style="border:0px solid red;width: 85%;margin:0 auto;display: flex;">
+			
+			<div class="card card-1"></div>
+			<div class="card card-1"></div>
+			<div class="card card-1"></div>
+			<div class="card card-1"></div>
+
+		</div>
+			
+	</div>
+	https://d1dp92jzo8lsgh.cloudfront.net/assets/website/Group%205-db94a11c1551e8ef57cb839d896bc14d8093fe2bbb1b53de2759e04007652a18.png
+
+
+	<!-- 
+
+
+	 -->
+
+<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="border:2px solid black;margin-top: 5%;">
+			
+
+	<div class="col-lg-4 col-lg-offset-1">
+		<img src="https://d1dp92jzo8lsgh.cloudfront.net/assets/website/build-network-9451d9736eea1495f2f1dadfb47749c82a441e66f404db9b29304ed17ccc388c.png" class="img-responsive">
+	</div>
+
+	<div class="col-lg-offset-1 col-lg-6">
+	<div class="flex" style="height:600px;border: 0px solid black">
+
+      	<div class="col-lg-12">
+      	<div class=" content_heading">
+      		<span class="enlarged-dark-text">Build</span> and <span class="enlarged-dark-text">engage</span> your alumni network
+      	</div>
+      	<div class="text_body_light content_text">
+            Use AlmaConnect powerful tracking & invitation mechanism to find and get alumni, students &
+            faculty members join the network and always find their information updated on the platform.
+        </div>
+       	</div>
+    
+	</div>
+	</div>
+</div>
+
+<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="border:2px solid black;margin-top: 5%;">
+
+
+	<div class="col-lg-4 col-lg-offset-1">
+	<div class="flex" style="height:600px;border: 0px solid black">
+
+      	<div class="col-lg-12">
+      	<div class=" content_heading">
+      		<span class="enlarged-dark-text">Consolidate</span> your <span class="enlarged-dark-text">fragmented</span> Alumni Network
+      	</div>
+      	<div class="text_body_light content_text">
+            
+            AlmaConnect is deeply integrated with all social media points and help you build one consolidated and powerful
+            channel to engage with your alumni is a primary point of contact catering to all your and their needs.
+          
+        </div>
+       	</div>
+    
+	</div>
+	</div>
+			
+
+	<div class="col-lg-offset-1 col-lg-6 ">
+		<img src="https://d1dp92jzo8lsgh.cloudfront.net/assets/website/Group%205-db94a11c1551e8ef57cb839d896bc14d8093fe2bbb1b53de2759e04007652a18.png" class="img-responsive">
+	</div>
+
+</div>
+
+
+
 </body>
 
 </html>
