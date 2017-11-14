@@ -161,3 +161,20 @@ body {
     font-size: 14px;
     color: #707274;
 }
+
+.content-box-2 {
+    padding-top: 136px;
+}
+
+
+.ac_button {
+    border-radius: 3px;
+    color: #fff;
+    background: #00c4b5;
+    padding: 8px 24px;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    border: 0;
+}
