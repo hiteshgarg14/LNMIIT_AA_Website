@@ -24,7 +24,7 @@ MEDIA_ROOT = MEDIA_DIR  # Heroku Setup
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
-
+STATICFILES_DIRS = [STATIC_DIR]
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '+8b)u7a_nc)@9qo9hiy^=bic*b)(@m^o%twi(*#dis3et2e$88'
 
@@ -118,7 +118,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 
