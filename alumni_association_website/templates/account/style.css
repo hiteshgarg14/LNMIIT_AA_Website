@@ -178,3 +178,26 @@ body {
     font-size: 14px;
     border: 0;
 }
+
+.footer_decor {
+    text-align: center;
+    padding-top: 54px;
+}
+
+ul.social-buttons {
+  margin-bottom: 0
+}
+
+
+ul.social-buttons li a {
+  display: block;
+  height: 40px;
+  width: 40px;
+  border:2px solid black; 
+  border-radius: 100%;
+  font-size: 15px;
+  line-height: 40px;
+  color: #ffffff;
+  outline: 0;
+  -webkit-transition: transform 2s,background 2s;
+
