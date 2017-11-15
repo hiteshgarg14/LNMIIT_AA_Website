@@ -30,6 +30,7 @@ SECRET_KEY = '+8b)u7a_nc)@9qo9hiy^=bic*b)(@m^o%twi(*#dis3et2e$88'
 
 # Application definition
 
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'debug_toolbar',
     # main app
     'webapp.apps.WebappConfig',
 
@@ -56,6 +58,7 @@ SITE_ID = 1
 
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

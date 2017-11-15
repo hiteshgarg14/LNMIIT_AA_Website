@@ -16,11 +16,19 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from webapp import views
+from django.conf import settings
+
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
     url(r'^', include('webapp.urls')),
+    url(r'^admin/', admin.site.urls),
     url(r'^accounts/password/set/$', views.custom_password_set, name='custom_password_set'),
     url(r'^accounts/password/change/$', views.custom_password_change, name='custom_password_change'),
     url(r'^accounts/', include('allauth.urls')),
 ]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns
