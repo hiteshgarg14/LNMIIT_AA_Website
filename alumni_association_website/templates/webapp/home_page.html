@@ -31,7 +31,18 @@
 	<div style="background-image:url('https://d1dp92jzo8lsgh.cloudfront.net/assets/website/website-header-wide-0deac06c2130e2729cdc775f5ac2818c5120a17bc58d312b3b33dfaa8837f8d6.png');height: 300px;">
 
 		<div style="padding-top:32px;">
-	        <div class="enlarged-dark-text">Build Engaging Communities</div>
+	        <div class="enlarged-dark-text">Build Engaging Communities
+				{% if request.user.is_authenticated %}
+				         {{  request.user.username }}
+				     <a href="{% url 'webapp_logout' %}">logout</a>
+				     {% if not linkedin_connected %}
+				        Connect Account to <a href="{% provider_login_url "linkedin" %}">LinkedIn</a>
+				    {% endif %}
+				 {% else %}
+				    <a href="{% url 'account_login' %}">Login/Signup</a>
+
+				{% endif %}
+			</div>
 	    </div>
 
 	   <div style="text-align: center; padding: 16px 0px;position:relative;">
