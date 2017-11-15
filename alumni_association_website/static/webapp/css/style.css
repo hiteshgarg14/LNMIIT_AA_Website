@@ -1,5 +1,5 @@
 body {
-  background: #eee !important;
+  /*background: #eee !important;*/
 }
 
 .wrapper {
@@ -84,3 +84,119 @@ body {
     /*background: #050729;*/
     color: black;
 }
+
+.enlarged-dark-text {
+    font-size: 32px;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #3a3f42;
+    font-weight: 700;
+}
+
+.enlarged-light-text {
+    font-size: 32px;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #707274;
+    font-weight: 600;
+}
+
+
+.card {
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  height: 300px;
+  margin: 1rem;
+  position: relative;
+  width: 300px;
+}
+
+.card-1{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.text_body_light{
+    font-weight: 400;
+    font-size: 14px;
+    color: #707274;
+    font-size: 18px;
+    line-height: 30px;
+    /*text-align: left;*/
+    padding-top: 8px;
+
+}
+
+.flex{
+
+    align-items:center !important;
+    display:flex !important;
+
+}
+
+.custom_style{
+
+  font-weight: 400;
+  color: #707274;
+  max-width: 480px;
+  width:100%;
+  margin: auto;
+  font-size: 18px;
+  display: inline-block;
+  line-height: 30px;
+
+}
+
+.content_text {
+    font-size: 18px;
+    line-height: 30px;
+    max-width: 480px;
+    /*text-align: left;*/
+    padding-top: 8px;
+}
+
+.text_body_light{
+
+    font-weight: 400;
+    font-size: 14px;
+    color: #707274;
+}
+
+.content-box-2 {
+    padding-top: 136px;
+}
+
+
+.ac_button {
+    border-radius: 3px;
+    color: #fff;
+    background: #00c4b5;
+    padding: 8px 24px;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    border: 0;
+}
+
+.footer_decor {
+    text-align: center;
+    padding-top: 54px;
+}
+
+ul.social-buttons {
+  margin-bottom: 0
+}
+
+
+ul.social-buttons li a {
+  display: block;
+  height: 40px;
+  width: 40px;
+  border:2px solid black;
+  border-radius: 100%;
+  font-size: 15px;
+  line-height: 40px;
+  color: #ffffff;
+  outline: 0;
+  -webkit-transition: transform 2s,background 2s;

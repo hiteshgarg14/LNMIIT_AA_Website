@@ -3,19 +3,326 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'webapp/css/style.css' %}">
 </head>
 <body>
-    {% if request.user.is_authenticated %}
-             {{  request.user.username }}
-         <a href="{% url 'webapp_logout' %}">logout</a>
-         {% if not linkedin_connected %}
-            Connect Account to <a href="{% provider_login_url "linkedin" %}">LinkedIn</a>
-        {% endif %}
-     {% else %}
-        <a href="{% url 'account_login' %}">Login/Signup</a>
-
+<!--  {% if request.user.is_authenticated %}
+         {{  request.user.username }}
+     <a href="{% url 'webapp_logout' %}">logout</a>
+     {% if not linkedin_connected %}
+        Connect Account to <a href="{% provider_login_url "linkedin" %}">LinkedIn</a>
     {% endif %}
+ {% else %}
+    <a href="{% url 'account_login' %}">Login/Signup</a>
+
+{% endif %} -->
+
+<div class="container" style="border:0px solid black;width: 100%;background-image:url(https://d1dp92jzo8lsgh.cloudfront.net/assets/website/testimonials-decor-27ba8db41a6c72bf25dc8ec127b2a603b25126343d0e5c171a5add6212cada54.png);">
+
+	<div style="background-image:url('https://d1dp92jzo8lsgh.cloudfront.net/assets/website/website-header-wide-0deac06c2130e2729cdc775f5ac2818c5120a17bc58d312b3b33dfaa8837f8d6.png');height: 300px;">
+
+		<div style="padding-top:32px;">
+	        <div class="enlarged-dark-text">Build Engaging Communities</div>
+	    </div>
+
+	   <div style="text-align: center; padding: 16px 0px;position:relative;">
+        <div class="custom_style">
+          Almaconnect helps you connect with your school / college / organization’s alumni network
+        </div>
+
+      </div>
+
+
+	</div>
+
+<!-- 	<div style="background-image:url('http://www.augusta.edu/alumni/images/alumni-hero-1.jpg');height: 625px;border:0px solid black;" class="margin-ten">
+	</div> -->
+
+	<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="border:0px solid black;margin-top: 5%;">
+			<div class="enlarged-light-text" ">
+		      <div>Connecting over <span class="enlarged-dark-text">1,000,000+ alumni</span> </div>
+		      <div>across <span class="enlarged-dark-text">2,000+ communities</span></div>
+		    </div>
+	</div>
+
+
+	<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="border:0px solid black;background-color: radial-gradient(rgb(243,244,245));margin-top: 5%;">
+
+		<div style="border:0px solid red;width: 85%;margin:0 auto;display: flex;">
+
+			<div class="card card-1">
+
+				<div class="flex" style="justify-content: center;height: 290px;">
+					<img src="https://yt3.ggpht.com/-HXcwA8OCaSU/AAAAAAAAAAI/AAAAAAAAAAA/RZnbzZK7m1M/s900-c-k-no-mo-rj-c0xffffff/photo.jpg" height="200" width="200">
+				</div>
+			</div>
+			<div class="card card-1">
+
+				<div class="flex" style="justify-content: center;height: 290px;">
+					<img src="https://yt3.ggpht.com/-Y8D6Fg-k6qc/AAAAAAAAAAI/AAAAAAAAAAA/9lU8yzk8H14/s900-c-k-no-mo-rj-c0xffffff/photo.jpg" height="200" width="200">
+				</div>
+
+
+			</div>
+			<div class="card card-1">
+
+				<div class="flex" style="justify-content: center;height: 290px;">
+					<img src="https://www.human.cornell.edu/themes/contrib/cornell/src/svg/seal-blk.svg" height="200" width="200">
+				</div>
+
+			</div>
+			<div class="card card-1">
+
+				<div class="flex" style="justify-content: center;height: 290px;">
+					<img src="http://collegeadmissioninfo.com/wp-content/uploads/2013/10/UPenn-Logo.gif" height="200" width="200">
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+	<!-- https://d1dp92jzo8lsgh.cloudfront.net/assets/website/Group%205-db94a11c1551e8ef57cb839d896bc14d8093fe2bbb1b53de2759e04007652a18.png -->
+
+
+	<!--
+
+
+	 -->
+
+<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="border:0px solid black;margin-top: 5%;">
+
+
+	<div class="col-lg-4 col-lg-offset-1">
+		<img src="https://d1dp92jzo8lsgh.cloudfront.net/assets/website/build-network-9451d9736eea1495f2f1dadfb47749c82a441e66f404db9b29304ed17ccc388c.png" class="img-responsive">
+	</div>
+
+	<div class="col-lg-offset-1 col-lg-6">
+	<div class="flex" style="height:600px;border: 0px solid black">
+
+      	<div class="col-lg-12">
+      	<div class=" content_heading">
+      		<span class="enlarged-dark-text">Build</span> and <span class="enlarged-dark-text">engage</span> your alumni network
+      	</div>
+      	<div class="text_body_light content_text">
+            Use AlmaConnect powerful tracking & invitation mechanism to find and get alumni, students &
+            faculty members join the network and always find their information updated on the platform.
+        </div>
+       	</div>
+
+	</div>
+	</div>
+</div>
+
+<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="border:0px solid black;">
+
+
+	<div class="col-lg-4 col-lg-offset-1">
+	<div class="flex" style="height:600px;border: 0px solid black">
+
+      	<div class="col-lg-12">
+      	<div class=" content_heading">
+      		<span class="enlarged-dark-text">Consolidate</span> your <span class="enlarged-dark-text">fragmented</span> Alumni Network
+      	</div>
+      	<div class="text_body_light content_text">
+
+            AlmaConnect is deeply integrated with all social media points and help you build one consolidated and powerful
+            channel to engage with your alumni is a primary point of contact catering to all your and their needs.
+
+        </div>
+       	</div>
+
+	</div>
+	</div>
+
+
+	<div class="col-lg-offset-1 col-lg-6 ">
+		<img src="https://d1dp92jzo8lsgh.cloudfront.net/assets/website/Group%205-db94a11c1551e8ef57cb839d896bc14d8093fe2bbb1b53de2759e04007652a18.png" class="img-responsive">
+	</div>
+
+</div>
+
+<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="border:0px solid black;">
+
+
+	<div class="col-lg-4 col-lg-offset-1">
+		<img src="https://d1dp92jzo8lsgh.cloudfront.net/assets/website/mobile-apps-be9f4a115b486a5156bcab7832f30fbe9f91a85e30ceb679c7c07093fe1ac810.png" class="img-responsive">
+	</div>
+
+	<div class="col-lg-offset-1 col-lg-6">
+	<div class="flex" style="height:600px;border: 0px solid black">
+
+      	<div class="col-lg-12">
+      	<div class=" content_heading">
+      		<span class="enlarged-dark-text">
+            All your communities </span> <span class="enlarged-dark-text"></span> on the go
+      	</div>
+      	<div class="text_body_light content_text">
+
+            AlmaConnect helps connect with all your alumni communities on the go, Mobile App, Tablet, Website, Mobile
+            Website, Facebook Application as well as email app. It allows alumni to do not adopt one more network and
+            connect from where they are comfortable with.
+
+        </div>
+       	</div>
+
+	</div>
+	</div>
+</div>
+
+</div>
+
+
+<div class="container">
+
+<div class="container" style="background-image: none;height: 300px;">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="http://www.augusta.edu/alumni/images/alumni-hero-1.jpg" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="http://www.augusta.edu/alumni/images/alumni-hero-1.jpg" alt="Chicago" style="width:100%;">
+      </div>
+
+
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<div style="position: relative;max-width:1280px;min-width:320px;margin:auto;padding:0px 8px;text-align:center;border: 0px solid black;margin-top: 20%;">
+    <div class="">
+      <div class="enlarged-light-text">
+        <div>Over <span class="enlarged-dark-text">80% of the communities</span> have improved</div>
+        <div>their alumni engagement considerably</div>
+      </div>
+      <div style="text-align: center; padding: 40px;">
+        <a class="ac_button" href="/institution_request/new" style="font-size: 18px;padding-top: 24px; height: 64px;
+            line-height: 18px; max-width: 380px; width: 100%; display: inline-block;">
+          Start building yours
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="footer col-lg-12" style="position: relative;margin:auto;padding:0px 8px;">
+
+  <div class="footer_decor">
+    <img ng-src="https://d1dp92jzo8lsgh.cloudfront.net/assets/website/footer-decor-1-6164cfbca1cb06f531914333009ff6ec67f8ae1629d726dd689f74ff37b156c0.png" style="max-width: 256px;" src="https://d1dp92jzo8lsgh.cloudfront.net/assets/website/footer-decor-1-6164cfbca1cb06f531914333009ff6ec67f8ae1629d726dd689f74ff37b156c0.png">
+  </div>
+
+  <div class="col-lg-2">
+      <div>
+        <a href="https://www.almaconnect.com">
+          <img src="http://gkayalu.com/wp-content/uploads/2011/03/alumni1.jpeg" style="max-height:88px;">
+        </a>
+      </div>
+    </div>
+
+    <div class="col-lg-offset-1 col-lg-2">
+      <div style="padding:6px 0px;" class="menu_item">
+        <a href="/features" class="text_body_light">Features</a>
+      </div>
+      <div style="padding:6px 0px;" class="menu_item">
+        <a class="text_body_light" href="/clients">Clients</a>
+      </div>
+      <div style="padding:6px 0px;" class="menu_item">
+        <a class="text_body_light" href="https://www.almaconnect.com/privacy_policy_20120807.pdf" target="_blank">Privacy Policy</a>
+      </div>
+      <div style="padding:6px 0px;" class="menu_item">
+        <a class="text_body_light" href="https://www.almaconnect.com/terms_of_use" target="_blank">Terms of use</a>
+      </div>
+    </div>
+
+    <div class="col-lg-offset-1 col-lg-2">
+      <div style="padding:6px 0px;" class="menu_item">
+        <a class="text_body_light" href="/aboutus" target="_blank">Our story</a>
+      </div>
+      <div style="padding:6px 0px;" class="menu_item">
+        <a class="text_body_light" href="https://www.almaconnect.com/contact_us" target="_blank">Contact Us</a>
+      </div>
+      <div style="padding:6px 0px;" class="menu_item">
+        <a class="text_body_light" href="/aboutus#joinus" target="_blank">Join us</a>
+      </div>
+    </div>
+
+    <div class="col-lg-offset-1 col-lg-3" style="padding:6px 0px;">
+
+     <!--  <a href="#">
+        <i class="fa fa-4x fa-linkedin custom-css" aria-hidden="true"></i>
+      </a> -->
+
+
+<div class="nav navbar-nav" style="padding: 40px 10px;">
+                     <ul class="list-inline">
+                      <li>
+                      	<a href="#">
+				        	<i class="fa fa-2x fa-linkedin custom-css" aria-hidden="true"></i>
+				  	    </a>
+				  	  </li>
+				  	  <li>
+                      	<a href="#">
+				        	<i class="fa fa-2x fa-facebook custom-css" aria-hidden="true"></i>
+				  	    </a>
+				  	  </li>
+				  	  <li>
+                      	<a href="#">
+				        	<i class="fa fa-2x fa-twitter custom-css" aria-hidden="true"></i>
+				  	    </a>
+				  	  </li>
+				  	  <!-- <li>
+                      	<a href="#">
+				        	<i class="fa fa-2x fa-google-plus custom-css" aria-hidden="true"></i>
+				  	    </a>
+				  	  </li> -->
+                     </ul>
+                  </div>
+    </div>
+
+
+    <div class="hide_below_560" style="position:absolute;right:20px;bottom:0px;max-width:156px;width:100%;margin-top:32px;">
+      <img src="https://d1dp92jzo8lsgh.cloudfront.net/assets/website/footer-decor-2-713a51371d4c81d3ede14692baebd55c0c4a38abfde92731b1595f51dd8b817b.png" style="max-width:140px;">
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
 </body>
 
 </html>
@@ -28,5 +335,3 @@
 
 <!-- Latest compiled JavaScript -->
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-
-
