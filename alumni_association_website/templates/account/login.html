@@ -114,7 +114,7 @@
                 </form>
                 <div class="social-auth-links text-center">
                     <p>- OR -</p>
-                    <a href="signup.html" class="text-center btn btn-success btn-block" >Register a new membership</a>
+                    <a href="{% url 'account_signup' %}" class="text-center btn btn-success btn-block" >Register a new membership</a>
 
                     <a href="{% provider_login_url "linkedin" %}" class="primaryAction btn btn-social btn-facebook btn-flat btn-block">
                         <i class="fa fa-linkedin"></i> Sign in using LinkedIn
@@ -129,19 +129,19 @@
                 <div style = ";margin-left : -10px;">
                     <div class = "row">
                         <div class = "col-xs-2 col-xs-offset-1">
-                            <a href="/about">About</a>
+                            <a href="#">About</a>
                         </div>
                         <div class = "col-xs-2">
-                            <a href="/about#team">Team</a>
+                            <a href="/#">Team</a>
                         </div>
                         <div class = "col-xs-2">
-                            <a href="/about#contact" style = "">Contact</a>
+                            <a href="#" style = "">Contact</a>
                         </div>
                         <div class = "col-xs-2">
-                            <a href="/faq" style = "padding-left : 10px;">FAQ</a>
+                            <a href="#" style = "padding-left : 10px;">FAQ</a>
                         </div>
                         <div class = "col-xs-2">
-                            <a href="/blog">Blog</a>
+                            <a href="#">Blog</a>
                         </div>
                         <!-- <div class = "col-xs-2" style = "margin-left : -13px;"><a href="/sitemap">Sitemap</a></div> -->
         
@@ -149,13 +149,13 @@
                     <hr>
                     <div class = "row">
                         <div class = "col-xs-4 col-xs-offset-1">
-                            <a href="/privacy">Privacy</a>
+                            <a href="#">Privacy</a>
                         </div>
                         <div class = "col-xs-4">
-                            <a href="/terms">Terms</a>
+                            <a href="#">Terms</a>
                         </div>
                         <div class = "col-xs-3">
-                            <a href="/sitemap">Sitemap</a>
+                            <a href="#">Sitemap</a>
                         </div>
                     </div>
                 </div>

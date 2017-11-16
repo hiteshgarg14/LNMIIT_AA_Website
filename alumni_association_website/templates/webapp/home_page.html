@@ -28,11 +28,52 @@
 
 {% endif %} -->
 
+<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top affix-top">
+       
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden active">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/">HOME</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#">EVENTS</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#">CONTRIBUTIONS</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#">BLOG</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll btn btn-xl" href="#" style="padding-top: 3px;padding-bottom: 3px;margin-top: 10px;">Login</a>
+                    </li>
+                    
+                  
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
 <div class="container" style="border:0px solid black;width: 100%;background-image:url(https://d1dp92jzo8lsgh.cloudfront.net/assets/website/testimonials-decor-27ba8db41a6c72bf25dc8ec127b2a603b25126343d0e5c171a5add6212cada54.png);">
 
 	<div style="background-image:url('https://d1dp92jzo8lsgh.cloudfront.net/assets/website/website-header-wide-0deac06c2130e2729cdc775f5ac2818c5120a17bc58d312b3b33dfaa8837f8d6.png');height: 300px;">
 
-		<div style="padding-top:32px;">
+<!-- 		<div style="padding-top:32px;">
 	        <div class="enlarged-dark-text">Build Engaging Communities
 				{% if request.user.is_authenticated %}
 				         {{  request.user.username }}
@@ -45,7 +86,7 @@
 
 				{% endif %}
 			</div>
-	    </div>
+	    </div> -->
 
 	   <div style="text-align: center; padding: 16px 0px;position:relative;">
         <div class="custom_style">
