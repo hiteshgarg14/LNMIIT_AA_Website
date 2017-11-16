@@ -28,7 +28,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">FossLnmiit</a>
+                <a class="navbar-brand page-scroll" href="#page-top"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -65,49 +65,77 @@
     </nav>
 
 
-        <div class="login-box" style = "padding :0px; margin-bottom : 0px; margin-top : 10%;">
-            <div class="login-logo" style="font-size : 60px;">
-                <!-- <img src="rtiblack_small.png" style = "height:120px;margin-top : -20px;">
-                <b>RTI</b>Feed -->
-            </div>
+
+<!-- <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+  {% csrf_token %} -->
+ <!--  <p><label for="id_email">E-mail:</label> <input type="email" name="email" placeholder="E-mail address" id="id_email" required /></p>
+<p><label for="id_username">Username:</label> <input type="text" name="username" maxlength="150" id="id_username" required autofocus="autofocus" placeholder="Username" minlength="1" /></p>
+
+<p><label for="id_password1">Password:</label> <input type="password" name="password1" placeholder="Password" id="id_password1" required /></p>
+<p><label for="id_password2">Password (again):</label> <input type="password" name="password2" placeholder="Password (again)" id="id_password2" required /></p> -->
+
+<!--   {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %} -->
+  <!-- <button type="submit">Sign Up &raquo;</button> -->
+<!-- </form> -->
+
+
+    <div class="login-box" style = "padding :0px; margin-bottom : 0px; margin-top : 10%;">
+        <div class="login-logo" style="font-size : 60px;">
+            <!-- <img src="rtiblack_small.png" style = "height:120px;margin-top : -20px;">
+            <b>RTI</b>Feed -->
+        </div>
             <!-- /.login-box-body -->
-            <div class="login-box-body" id="sign_up">
-                <p class="login-box-msg">Sign up</p>
-                <form action="" method="post" onsubmit="return validate_signup_form()" id = "signup_form">
-                    <div class="form-group has-feedback">
-                        <input type="text" class="form-control" placeholder="First Name" name = "first_name" required>
-                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                    </div>
-                    <div class="form-group has-feedback">
-                        <input type="text" class="form-control" placeholder="Last Name" name = "last_name">
-                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                    </div>
-                    <div class="form-group has-feedback">
-                        <input type="email" class="form-control" placeholder="Email" name = "email" required>
-                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                    </div>
-                    <div class="form-group has-feedback">
-                        <input type="password" class="form-control" placeholder="Password" name = "password" id = "password" required>
-                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                    </div>
-                    <div class="form-group has-feedback">
-                        <input type="password" class="form-control" placeholder="Re-enter Password" name = "re_password" id = "re_password" required>
-                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                    </div>
+        <div class="login-box-body" id="sign_up">
+            <p class="login-box-msg">Welcome to Alumni Portal SignUp</p>
+            <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+
+            <div class="form-group has-feedback">
+         
+                <input type="text" name="username" class = "form-control" maxlength="150" id="id_username" required autofocus="autofocus" placeholder="Username" minlength="1" />
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+
+            <div class="form-group has-feedback">
+               
+                <input type="email" name="email" placeholder="E-mail address" id="id_email" class = "form-control" required />
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+
+            <div class="form-group has-feedback">
+                <input type="password" class="form-control"  name="password1" placeholder="Password" id="id_password1" required />
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+
+            <div class="form-group has-feedback">
+             
+                <input type="password" name="password2" placeholder="Password (again)" id="id_password2" required  class="form-control" />
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+
+             <div >
+             <button type="submit" class="btn btn-warning" style="width:100%;border: none;" >SUBMIT <span class="glyphicon glyphicon-send"></span></button>
+            </div>
              
     </form>
     <div class="social-auth-links text-center">
         <p>- OR -</p>
-        <a href="/login/facebook/?next=" class="btn btn-block btn-social btn-facebook btn-flat">
-            <i class="fa fa-facebook"></i> Sign in using Facebook
+        <a href="#" class="btn btn-block btn-social btn-facebook btn-flat" style="border: none;">
+            <i class="fa fa-facebook"></i> Sign up using Facebook
         </a>
-        <a href="/login/twitter/?next=" class="btn btn-block btn-social btn-twitter btn-flat">
-            <i class="fa fa-twitter"></i> Sign in using Twitter
+        <a href="#" class="btn btn-block btn-social btn-twitter btn-flat" style="border: none;">
+            <i class="fa fa-linkedin"></i> Sign up using LinkedIn
         </a>
+
+        <a href="login.html" class="btn btn-block btn-social btn-divyanshu btn-flat" style="border: none;">
+            <i class="fa fa-user-plus"></i> Sign in 
+        </a>
+
     </div>
     <!-- /.social-auth-links -->
     <!-- <a href="#!" id = "forgot_password">I forgot my password</a><br> -->
-    <a href="login.html" class="text-center">Sign In</a>
+    <!-- <a href="login.html" class="text-center">Sign In</a> -->
 </div>
 <!-- /.login-box-body -->
         
@@ -178,20 +206,6 @@
 
 
 
-
-<!-- <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %} -->
- <!--  <p><label for="id_email">E-mail:</label> <input type="email" name="email" placeholder="E-mail address" id="id_email" required /></p>
-<p><label for="id_username">Username:</label> <input type="text" name="username" maxlength="150" id="id_username" required autofocus="autofocus" placeholder="Username" minlength="1" /></p>
-
-<p><label for="id_password1">Password:</label> <input type="password" name="password1" placeholder="Password" id="id_password1" required /></p>
-<p><label for="id_password2">Password (again):</label> <input type="password" name="password2" placeholder="Password (again)" id="id_password2" required /></p> -->
-
-<!--   {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %} -->
-  <!-- <button type="submit">Sign Up &raquo;</button> -->
-<!-- </form> -->
 
 
 <!-- <div class="container" > -->

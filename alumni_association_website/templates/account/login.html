@@ -115,8 +115,10 @@
                 <div class="social-auth-links text-center">
                     <p>- OR -</p>
                     <a href="signup.html" class="text-center btn btn-success btn-block" >Register a new membership</a>
-                    <a href="" class="btn btn-block btn-social btn-facebook btn-flat">
+
+                    <a href="{% provider_login_url "linkedin" %}" class="primaryAction btn btn-social btn-facebook btn-flat btn-block">
                         <i class="fa fa-linkedin"></i> Sign in using LinkedIn
+
                     </a>
                     <a href="/login/twitter/?next=" class="btn btn-block btn-social btn-twitter btn-flat">
                         <i class="fa fa-twitter"></i> Sign in using Twitter
