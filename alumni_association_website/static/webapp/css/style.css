@@ -233,3 +233,12 @@ ul.social-buttons li a {
 .hidden {
     display: none!important;
 }
+
+
+.custom_background{
+
+  background-image: url('http://fosslnmiit.herokuapp.com/static/img/bg.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
+
+}
