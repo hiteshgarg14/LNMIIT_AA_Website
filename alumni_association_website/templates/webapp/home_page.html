@@ -1,5 +1,5 @@
-{% load staticfiles %}
-{% load socialaccount %}
+<!-- {% load staticfiles %}
+{% load socialaccount %} -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +16,7 @@
 
 <link rel="stylesheet" type="text/css" href="../../static/webapp/css/style.css">
 </head>
-<body>
+<body style="background-image: url('https://d1dp92jzo8lsgh.cloudfront.net/assets/website/testimonials-decor-27ba8db41a6c72bf25dc8ec127b2a603b25126343d0e5c171a5add6212cada54.png')">
 <!--  {% if request.user.is_authenticated %}
          {{  request.user.username }}
      <a href="{% url 'webapp_logout' %}">logout</a>
@@ -28,7 +28,15 @@
 
 {% endif %} -->
 
-<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top affix-top">
+
+
+<div class="custom_background" style="border:0px solid black;width: 100%;" >
+
+
+	<div style="height: 800px;">
+
+<div>
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top affix-top">
        
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -46,7 +54,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="/">HOME</a>
+                        <a class="page-scroll" href="../webapp/home_page.html">HOME</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#">EVENTS</a>
@@ -58,7 +66,7 @@
                         <a class="page-scroll" href="#">BLOG</a>
                     </li>
                     <li>
-                        <a class="page-scroll btn btn-xl" href="#" style="padding-top: 3px;padding-bottom: 3px;margin-top: 10px;">Login</a>
+                        <a class="page-scroll btn btn-xl" href="../account/login.html" style="padding-top: 3px;padding-bottom: 3px;margin-top: 10px;">Login</a>
                     </li>
                     
                   
@@ -68,10 +76,14 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+  </div>
+<!-- 
+  <div style="text-align: center; padding: 16px 0px;position:relative;">
+        <div class="custom_style">
+          Almaconnect helps you connect with your school / college / organization’s alumni network
+        </div>
 
-<div class="container" style="border:0px solid black;width: 100%;background-image:url(https://d1dp92jzo8lsgh.cloudfront.net/assets/website/testimonials-decor-27ba8db41a6c72bf25dc8ec127b2a603b25126343d0e5c171a5add6212cada54.png);">
-
-	<div style="background-image:url('https://d1dp92jzo8lsgh.cloudfront.net/assets/website/website-header-wide-0deac06c2130e2729cdc775f5ac2818c5120a17bc58d312b3b33dfaa8837f8d6.png');height: 300px;">
+      </div> -->
 
 <!-- 		<div style="padding-top:32px;">
 	        <div class="enlarged-dark-text">Build Engaging Communities
@@ -88,14 +100,7 @@
 			</div>
 	    </div> -->
 
-	   <div style="text-align: center; padding: 16px 0px;position:relative;">
-        <div class="custom_style">
-          Almaconnect helps you connect with your school / college / organization’s alumni network
-        </div>
-
-      </div>
-
-
+	   
 	</div>
 
 <!-- 	<div style="background-image:url('http://www.augusta.edu/alumni/images/alumni-hero-1.jpg');height: 625px;border:0px solid black;" class="margin-ten">
@@ -236,18 +241,18 @@
 </div>
 
 
-<div class="container">
+<!-- <div class="container">
 
 <div class="container" style="background-image: none;height: 300px;">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
+ 
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
 
-    <!-- Wrapper for slides -->
+   
     <div class="carousel-inner">
       <div class="item active">
         <img src="http://www.augusta.edu/alumni/images/alumni-hero-1.jpg" alt="Los Angeles" style="width:100%;">
@@ -260,7 +265,6 @@
 
     </div>
 
-    <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
       <span class="sr-only">Previous</span>
@@ -286,8 +290,7 @@
       </div>
     </div>
   </div>
-
-</div>
+</div> -->
 
 
 
@@ -371,13 +374,17 @@
     </div>
 
   </div>
-</div>
+
 
 
 
 
 
 </body>
+
+ <!-- Theme JavaScript -->
+    <script src="../../static/webapp/js/scroll.js"></script>
+
 
 </html>
 

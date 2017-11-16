@@ -249,3 +249,13 @@ ul.social-buttons li a {
   color: white;
 
 }
+
+.affix {
+    position: fixed;
+}
+
+.navbar-custom.affix {
+    background-color: #222;
+    padding: 10px 0;
+}
+
