@@ -1,115 +1,352 @@
-{% load staticfiles %}
-{% load socialaccount %}
+<!-- {% load staticfiles %} -->
 <!DOCTYPE html>
 <html>
-
 <head>
-    <link rel="stylesheet" href="{% static 'webapp/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/style.css' %}">
+  <!-- <link rel="stylesheet" href="{% static 'webapp/css/bootstrap.min.css' %}"> -->
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/style.css' %}"> -->
+    <!-- Latest compiled and minified CSS -->
+     
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="../../static/webapp/css/style.css">
+
+     <link rel="stylesheet" href="../../static/webapp/css/app.min.css">
+        <!-- iCheck -->
+     <link rel="stylesheet" href="../../static/webapp/css/blue.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../static/webapp/css/bootstrap.min.css"> -->
 
 </head>
+<body style="background-image: url('http://fosslnmiit.herokuapp.com/static/img/bg.jpg');background-repeat:no-repeat;background-size:cover;">
 
-<body>
-
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-                <a class="navbar-brand" href="#">Alumni Association</a>
+<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top affix-top">
+       
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">FossLnmiit</a>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li class="dropdown-header">Nav header</li>
-                            <li><a href="#">Separated link</a></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-                    <!-- <li><a href="../navbar-static-top/">Static top</a></li> -->
-                    <!-- <li><a href="../navbar-fixed-top/">Fixed top</a></li> -->
+                    <li class="hidden active">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/">HOME</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/events/">EVENTS</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/contributions/">CONTRIBUTIONS</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/blog/">BLOG</a>
+                    </li>
+
+                     
+                     
+                    <li>
+                        <a class="page-scroll btn btn-xl" href="/login/" style="padding-top: 3px;padding-bottom: 3px;margin-top: 10px;">Login</a>
+                    </li>
+                    
+                  
                 </ul>
             </div>
-            <!--/.nav-collapse -->
+            <!-- /.navbar-collapse -->
         </div>
-        <!--/.container-fluid -->
+        <!-- /.container-fluid -->
     </nav>
-    <!-- <br />
-<p>
-
-</p> -->
-
-    <!-- <form class="login" method="POST" action="{% url 'account_login' %}">
-  {% csrf_token %}
-  <p><label for="id_login">Username/Email:</label> <input type="text" name="login" placeholder="Username/Email" required autofocus="autofocus" id="id_login" maxlength="150" /></p>
-<p><label for="id_password">Password:</label> <input type="password" name="password" placeholder="Password" required id="id_password" /></p>
-<p><label for="id_remember">Remember Me:</label> <input type="checkbox" name="remember" id="id_remember" /></p>
-
-  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">Forgot Password?</a>
-  <button class="primaryAction" type="submit">Sign In</button>
-</form> -->
 
 
-    <!-- <a href="{% url 'account_signup' %}">Signup</a> -->
 
-    <div class="wrapper">
-        <div>
-            <form class="form-signin" method="POST" action="{% url 'account_login' %}">
-                {% csrf_token %}
-                <h3 class="form-signin-heading">Login</h3>
-                {% include 'webapp/form_errors.html' %}
-                <div class="form-group">
-                    <label for="id_login">Username/Email:</label>
-                    <input class="form-control" type="text" name="login" placeholder="Username/Email" required autofocus="autofocus" id="id_login" maxlength="150" />
+<div class="login-box" style = "padding :0px; margin-bottom : 0px; margin-top : 10%;">
+            <div class="login-logo" style="font-size : 60px;">
+                <!-- <img src="rtiblack_small.png" style = "height:120px;margin-top : -20px;">
+                <b>RTI</b>Feed -->
+            </div>
+            <!-- /.login-logo -->
+            <div class="login-box-body" id="sign_in" style = "">
+                <!-- <p class="login-box-msg">Welcome to RTIFeed</p> -->
+                <form action="/email_login" method="post" >
+                    <div class="form-group has-feedback">
+                        <input type="email" class="form-control" placeholder="Email" name = "email" required>
+                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input type="password" class="form-control" placeholder="Password" name = "password" required>
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <a href="#" id = "forgot_password">I forgot my password</a>
+                            <br>
+              
+            
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-xs-4">
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                        </div>
+                        <!-- /.col -->
+          
+                    </div>
+                </form>
+                <div class="social-auth-links text-center">
+                    <p>- OR -</p>
+                    <a href="signup.html" class="text-center btn btn-success btn-block" >Register a new membership</a>
+                    <a href="/login/facebook/?next=" class="btn btn-block btn-social btn-facebook btn-flat">
+                        <i class="fa fa-linkedin"></i> Sign in using Facebook
+                    </a>
+                    <a href="/login/twitter/?next=" class="btn btn-block btn-social btn-twitter btn-flat">
+                        <i class="fa fa-twitter"></i> Sign in using Twitter
+                    </a>
                 </div>
-
-                <div class="form-group">
-                    <label for="id_password">Password:</label>
-                    <input type="password" class="form-control" name="password" placeholder="Password" required id="id_password" />
+                <!-- /.social-auth-links -->
+                <hr>
+                <div style = ";margin-left : -10px;">
+                    <div class = "row">
+                        <div class = "col-xs-2 col-xs-offset-1">
+                            <a href="/about">About</a>
+                        </div>
+                        <div class = "col-xs-2">
+                            <a href="/about#team">Team</a>
+                        </div>
+                        <div class = "col-xs-2">
+                            <a href="/about#contact" style = "">Contact</a>
+                        </div>
+                        <div class = "col-xs-2">
+                            <a href="/faq" style = "padding-left : 10px;">FAQ</a>
+                        </div>
+                        <div class = "col-xs-2">
+                            <a href="/blog">Blog</a>
+                        </div>
+                        <!-- <div class = "col-xs-2" style = "margin-left : -13px;"><a href="/sitemap">Sitemap</a></div> -->
+        
+                    </div>
+                    <hr>
+                    <div class = "row">
+                        <div class = "col-xs-4 col-xs-offset-1">
+                            <a href="/privacy">Privacy</a>
+                        </div>
+                        <div class = "col-xs-4">
+                            <a href="/terms">Terms</a>
+                        </div>
+                        <div class = "col-xs-3">
+                            <a href="/sitemap">Sitemap</a>
+                        </div>
+                    </div>
                 </div>
-                <label for="id_remember">Remember Me:</label>
-                <input type="checkbox" name="remember" id="id_remember" />
-                <div>
-                    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">Forgot Password?</a>
-                </div>
-
-                <button class="primaryAction btn btn-md btn-primary btn-block margin-ten" type="submit">Login</button>
-
-            </form>
-        </div>
-
-        <div class="form-signin-two">
-
-            <a href="{% provider_login_url "linkedin" %}" class="primaryAction btn btn-default btn-block">
-	  	<i class="fa fa-linkedin custom-css pull-left" aria-hidden="true"></i>Log in with LinkedIn
-	  </a>
-
-            <div class="margin-ten">
-                <p style="display: inline-block;">Need an account?</p> <a href="{% url 'account_signup' %}">Signup</a>
             </div>
 
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+  {% csrf_token %} -->
+ <!--  <p><label for="id_email">E-mail:</label> <input type="email" name="email" placeholder="E-mail address" id="id_email" required /></p>
+<p><label for="id_username">Username:</label> <input type="text" name="username" maxlength="150" id="id_username" required autofocus="autofocus" placeholder="Username" minlength="1" /></p>
+
+<p><label for="id_password1">Password:</label> <input type="password" name="password1" placeholder="Password" id="id_password1" required /></p>
+<p><label for="id_password2">Password (again):</label> <input type="password" name="password2" placeholder="Password (again)" id="id_password2" required /></p> -->
+
+<!--   {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %} -->
+  <!-- <button type="submit">Sign Up &raquo;</button> -->
+<!-- </form> -->
+
+
+<!-- <div class="container" > -->
+
+<!-- <form class="signup col-lg-12 form-horizontal" id="signup_form" method="post" action="{% url 'account_signup' %}" style="color:white;">
+  {% csrf_token %}
+<fieldset> -->
+
+<!-- Form Name -->
+<!-- <center><h3><b>Registration Form</b></h3></center><br> -->
+
+<!-- Text input-->
+
+<!-- <div class="form-group">
+  <label class="col-md-4 control-label">First Name</label>
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div> -->
+
+<!-- Text input-->
+
+<!-- <div class="form-group">
+  <label class="col-md-4 control-label" >Last Name</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+ -->
+
+<!-- Text input-->
+
+
+  <!-- {% include 'webapp/form_errors.html' %} -->
+<!-- <div class="form-group">
+  <label class="col-md-4 control-label" for="id_username">Username</label>
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+  <input class = "form-control" type="text" name="username" maxlength="150" id="id_username" required autofocus="autofocus" placeholder="Username" minlength="1" />
 
     </div>
+  </div>
+</div> -->
+
+<!-- Text input-->
+
+<!-- <div class="form-group">
+  <label for="id_password1" class="col-md-4 control-label" >Password</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="password" class="form-control" name="password1" placeholder="Password" id="id_password1" required />
+    </div>
+  </div>
+</div> -->
+
+<!-- Text input-->
+
+<!-- <div class="form-group">
+  <label for="id_password2" class="col-md-4 control-label" >Confirm Password</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="password" class = "form-control" name="password2" placeholder="Password (again)" id="id_password2" required />
+    </div>
+  </div>
+</div> -->
+
+<!-- Text input-->
+<!--  <div class="form-group">
+  <label class="col-md-4 control-label" for="id_email">E-Mail</label>
+
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+        <input type="email" name="email" placeholder="E-Mail Address" class="form-control" id="id_email" type="text" required/>
+
+    </div>
+  </div>
+</div> -->
 
 
-</body>
+  <!-- {% if redirect_field_value %} -->
+  <!-- <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" /> -->
+  <!-- {% endif %} -->
 
-</html>
+<!-- Text input-->
+
+
+<!-- Select Basic -->
+
+<!-- Success message -->
+<!-- <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div> -->
+
+<!-- Button -->
+<!-- <div class="form-group">
+<div class="col-lg-12">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+   <button type="submit" class="btn btn-warning" >SUBMIT <span class="glyphicon glyphicon-send"></span></button>
+  </div>
+</div>
+ -->
+
+<!-- </div> -->
+<!-- 
+<div class="text-align">
+  <p>I Already have an account? Then please <a href="{{ login_url }}">SignIn</a></p>
+</div> -->
+
+
+<!-- </form> -->
+<!-- </div>  -->
+
+
+ </body>
+
+ </html>

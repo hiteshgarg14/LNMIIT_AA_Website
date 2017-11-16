@@ -1,52 +1,178 @@
-{% load staticfiles %}
+<!-- {% load staticfiles %} -->
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="{% static 'webapp/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/style.css' %}">
+  <!-- <link rel="stylesheet" href="{% static 'webapp/css/bootstrap.min.css' %}"> -->
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/style.css' %}"> -->
+    <!-- Latest compiled and minified CSS -->
+     
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="../../static/webapp/css/style.css">
+
+     <link rel="stylesheet" href="../../static/webapp/css/app.min.css">
+        <!-- iCheck -->
+     <link rel="stylesheet" href="../../static/webapp/css/blue.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../static/webapp/css/bootstrap.min.css"> -->
 
 </head>
-</head>
-<body>
+<body style="background-image: url('http://fosslnmiit.herokuapp.com/static/img/bg.jpg');background-repeat:no-repeat;background-size:cover;">
 
-	<nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Alumni Association</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li class="dropdown-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
+<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top affix-top">
+       
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">FossLnmiit</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden active">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/">HOME</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/events/">EVENTS</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/contributions/">CONTRIBUTIONS</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/blog/">BLOG</a>
+                    </li>
+
+                     
+                     
+                    <li>
+                        <a class="page-scroll btn btn-xl" href="/login/" style="padding-top: 3px;padding-bottom: 3px;margin-top: 10px;">Login</a>
+                    </li>
+                    
+                  
                 </ul>
-              </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-              <!-- <li><a href="../navbar-static-top/">Static top</a></li> -->
-              <!-- <li><a href="../navbar-fixed-top/">Fixed top</a></li> -->
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </nav>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+        <div class="login-box" style = "padding :0px; margin-bottom : 0px; margin-top : 10%;">
+            <div class="login-logo" style="font-size : 60px;">
+                <!-- <img src="rtiblack_small.png" style = "height:120px;margin-top : -20px;">
+                <b>RTI</b>Feed -->
+            </div>
+            <!-- /.login-box-body -->
+            <div class="login-box-body" id="sign_up">
+                <p class="login-box-msg">Sign up</p>
+                <form action="" method="post" onsubmit="return validate_signup_form()" id = "signup_form">
+                    <div class="form-group has-feedback">
+                        <input type="text" class="form-control" placeholder="First Name" name = "first_name" required>
+                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input type="text" class="form-control" placeholder="Last Name" name = "last_name">
+                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input type="email" class="form-control" placeholder="Email" name = "email" required>
+                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input type="password" class="form-control" placeholder="Password" name = "password" id = "password" required>
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input type="password" class="form-control" placeholder="Re-enter Password" name = "re_password" id = "re_password" required>
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+             
+    </form>
+    <div class="social-auth-links text-center">
+        <p>- OR -</p>
+        <a href="/login/facebook/?next=" class="btn btn-block btn-social btn-facebook btn-flat">
+            <i class="fa fa-facebook"></i> Sign in using Facebook
+        </a>
+        <a href="/login/twitter/?next=" class="btn btn-block btn-social btn-twitter btn-flat">
+            <i class="fa fa-twitter"></i> Sign in using Twitter
+        </a>
+    </div>
+    <!-- /.social-auth-links -->
+    <!-- <a href="#!" id = "forgot_password">I forgot my password</a><br> -->
+    <a href="login.html" class="text-center">Sign In</a>
+</div>
+<!-- /.login-box-body -->
+        
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -68,14 +194,14 @@
 <!-- </form> -->
 
 
-<div class="container">
+<!-- <div class="container" > -->
 
-<form class="signup well form-horizontal" id="signup_form" method="post" action="{% url 'account_signup' %}">
+<!-- <form class="signup col-lg-12 form-horizontal" id="signup_form" method="post" action="{% url 'account_signup' %}" style="color:white;">
   {% csrf_token %}
-<fieldset>
+<fieldset> -->
 
 <!-- Form Name -->
-<legend><center><h3><b>Registration Form</b></h3></center></legend><br>
+<!-- <center><h3><b>Registration Form</b></h3></center><br> -->
 
 <!-- Text input-->
 
@@ -105,8 +231,8 @@
 <!-- Text input-->
 
 
-  {% include 'webapp/form_errors.html' %}
-<div class="form-group">
+  <!-- {% include 'webapp/form_errors.html' %} -->
+<!-- <div class="form-group">
   <label class="col-md-4 control-label" for="id_username">Username</label>
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
@@ -116,11 +242,11 @@
 
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- Text input-->
 
-<div class="form-group">
+<!-- <div class="form-group">
   <label for="id_password1" class="col-md-4 control-label" >Password</label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
@@ -128,11 +254,11 @@
   <input type="password" class="form-control" name="password1" placeholder="Password" id="id_password1" required />
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- Text input-->
 
-<div class="form-group">
+<!-- <div class="form-group">
   <label for="id_password2" class="col-md-4 control-label" >Confirm Password</label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
@@ -140,10 +266,10 @@
   <input type="password" class = "form-control" name="password2" placeholder="Password (again)" id="id_password2" required />
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- Text input-->
- <div class="form-group">
+<!--  <div class="form-group">
   <label class="col-md-4 control-label" for="id_email">E-Mail</label>
 
     <div class="col-md-4 inputGroupContainer">
@@ -154,12 +280,12 @@
 
     </div>
   </div>
-</div>
+</div> -->
 
 
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
+  <!-- {% if redirect_field_value %} -->
+  <!-- <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" /> -->
+  <!-- {% endif %} -->
 
 <!-- Text input-->
 
@@ -167,30 +293,27 @@
 <!-- Select Basic -->
 
 <!-- Success message -->
-<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
+<!-- <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div> -->
 
 <!-- Button -->
-<div class="form-group">
+<!-- <div class="form-group">
 <div class="col-lg-12">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4"><br>
    <button type="submit" class="btn btn-warning" >SUBMIT <span class="glyphicon glyphicon-send"></span></button>
   </div>
 </div>
+ -->
 
-
-</div>
-
+<!-- </div> -->
+<!-- 
 <div class="text-align">
   <p>I Already have an account? Then please <a href="{{ login_url }}">SignIn</a></p>
-</div>
+</div> -->
 
 
-
-</fieldset>
-</form>
-</div>
-    </div><!-- /.container -->
+<!-- </form> -->
+<!-- </div>  -->
 
 
  </body>
