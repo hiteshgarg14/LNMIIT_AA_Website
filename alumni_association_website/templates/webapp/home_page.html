@@ -1,5 +1,5 @@
-<!-- {% load staticfiles %}
-{% load socialaccount %} -->
+{% load staticfiles %}
+{% load socialaccount %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +16,7 @@
 
 <link rel="stylesheet" type="text/css" href="../../static/webapp/css/style.css">
 </head>
-<body style="background-image: url('https://d1dp92jzo8lsgh.cloudfront.net/assets/website/testimonials-decor-27ba8db41a6c72bf25dc8ec127b2a603b25126343d0e5c171a5add6212cada54.png')">
+<body style="background-image: url('{% static 'webapp/images/body_background.png' %}')">
 <!--  {% if request.user.is_authenticated %}
          {{  request.user.username }}
      <a href="{% url 'webapp_logout' %}">logout</a>
@@ -37,14 +37,14 @@
 
 <div>
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top affix-top">
-       
+
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top"></a>
+                <a class="navbar-brand page-scroll" style="color: yellow;" href="#"><strong>Alumni Association | LNMIIT</strong></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -54,7 +54,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="../webapp/home_page.html">HOME</a>
+                        <a class="page-scroll" href="{% url 'webapp_home_page' %}">HOME</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#">EVENTS</a>
@@ -66,10 +66,23 @@
                         <a class="page-scroll" href="#">BLOG</a>
                     </li>
                     <li>
-                        <a class="page-scroll btn btn-xl" href="../account/login.html" style="padding-top: 3px;padding-bottom: 3px;margin-top: 10px;">Login</a>
+                        {% if request.user.is_authenticated %}
+                        <li>
+                             <div class="dropdown">
+                                  <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" style="padding-top: 3px;padding-bottom: 3px;margin-top: 10px;">{{ request.user.username }}
+                                  <span class="charset"></span></button>
+                                  <ul class="dropdown-menu">
+                                    <li><a href="{% url 'webapp_profile' %}">Profile</a></li>
+                                    <li><a href="{% url 'webapp_logout' %}">Logout</a></li>
+                                  </ul>
+                            </div>
+                        </li>
+                        {% else %}
+                          <a class="page-scroll btn btn-xl" href="{% url 'account_login' %}" style="padding-top: 3px;padding-bottom: 3px;margin-top: 10px;">Login</a>
+                        {% endif %}
                     </li>
-                    
-                  
+
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -77,7 +90,7 @@
         <!-- /.container-fluid -->
     </nav>
   </div>
-<!-- 
+<!--
   <div style="text-align: center; padding: 16px 0px;position:relative;">
         <div class="custom_style">
           Almaconnect helps you connect with your school / college / organization’s alumni network
@@ -100,14 +113,14 @@
 			</div>
 	    </div> -->
 
-	   
+
 	</div>
 
 <!-- 	<div style="background-image:url('http://www.augusta.edu/alumni/images/alumni-hero-1.jpg');height: 625px;border:0px solid black;" class="margin-ten">
 	</div> -->
 
 	<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="border:0px solid black;margin-top: 5%;">
-			<div class="enlarged-light-text" ">
+			<div class="enlarged-light-text">
 		      <div>Connecting over <span class="enlarged-dark-text">1,000,000+ alumni</span> </div>
 		      <div>across <span class="enlarged-dark-text">2,000+ communities</span></div>
 		    </div>
@@ -245,14 +258,14 @@
 
 <div class="container" style="background-image: none;height: 300px;">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
- 
+
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
 
-   
+
     <div class="carousel-inner">
       <div class="item active">
         <img src="http://www.augusta.edu/alumni/images/alumni-hero-1.jpg" alt="Los Angeles" style="width:100%;">
