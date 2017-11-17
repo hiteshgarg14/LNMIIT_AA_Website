@@ -89,7 +89,7 @@ body {
 }
 
 .enlarged-dark-text {
-    font-size: 32px;
+    font-size: 24px;
     letter-spacing: -0.5px;
     text-align: center;
     color: #3a3f42;
@@ -97,7 +97,7 @@ body {
 }
 
 .enlarged-light-text {
-    font-size: 32px;
+    font-size: 24px;
     letter-spacing: -0.5px;
     text-align: center;
     color: #707274;
@@ -237,7 +237,7 @@ ul.social-buttons li a {
 
 .custom_background{
 
-  background-image: url('http://fosslnmiit.herokuapp.com/static/img/bg.jpg');
+  background-image: url('http://fosslnmiit.herokuapp.com/static/img/bg.jpg') !important;
   background-repeat:no-repeat;
   background-size:cover;
 
@@ -259,3 +259,29 @@ ul.social-buttons li a {
     padding: 10px 0;
 }
 
+.btn-warning{
+  background-color:#7b191b !important;
+}
+
+.hover_over:hover{
+  background-color: #029652;
+}
+
+
+.white{
+  color: white !important;
+}
+
+/*.main_page_img_src{
+
+  background: url('http://fosslnmiit.herokuapp.com/static/img/bg.jpg');
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
+  height:800px;
+  border:1px solid red;
+  width: 100%;'
+ 
+
+}
+*/
