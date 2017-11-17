@@ -6,6 +6,7 @@ from allauth.account.views import PasswordSetView, PasswordChangeView
 from django.urls import reverse_lazy, reverse
 from allauth.socialaccount.models import SocialAccount
 
+
 def home_page(request):
 	linkedin_connected = False
 	if request.user.is_authenticated and SocialAccount.objects.filter(user=request.user):
@@ -19,7 +20,9 @@ def logout(request):
 	auth.logout(request)
 	return HttpResponseRedirect(reverse('webapp_home_page'))
 
+
 class CustomPasswordSetView(PasswordSetView):
+
 	@property
 	def success_url(self):
 		return reverse_lazy('webapp_home_page')
@@ -29,6 +32,8 @@ class CustomPasswordSetView(PasswordSetView):
 	        return HttpResponseRedirect(reverse('webapp_home_page'))
 	    return super(PasswordSetView, self).render_to_response(
 	        context, **response_kwargs)
+
+
 
 class CustomPasswordChangeView(PasswordChangeView):
 	@property
