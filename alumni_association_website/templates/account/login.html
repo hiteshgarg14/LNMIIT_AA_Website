@@ -1,115 +1,171 @@
-{% load staticfiles %}
-{% load socialaccount %}
+<!-- {% load staticfiles %} -->
 <!DOCTYPE html>
 <html>
-
 <head>
-    <link rel="stylesheet" href="{% static 'webapp/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/style.css' %}">
+  <!-- <link rel="stylesheet" href="{% static 'webapp/css/bootstrap.min.css' %}"> -->
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/style.css' %}"> -->
+    <!-- Latest compiled and minified CSS -->
+     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="../../static/webapp/css/style.css">
+
+     <link rel="stylesheet" href="../../static/webapp/css/app.min.css">
+        <!-- iCheck -->
+     <link rel="stylesheet" href="../../static/webapp/css/blue.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../static/webapp/css/bootstrap.min.css"> -->
 
 </head>
+<body class="custom_background">
 
-<body>
-
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-                <a class="navbar-brand" href="#">Alumni Association</a>
+<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top affix-top">
+       
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top"></a>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li class="dropdown-header">Nav header</li>
-                            <li><a href="#">Separated link</a></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-                    <!-- <li><a href="../navbar-static-top/">Static top</a></li> -->
-                    <!-- <li><a href="../navbar-fixed-top/">Fixed top</a></li> -->
+                    <li class="hidden active">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../webapp/home_page.html">HOME</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/events/">EVENTS</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/contributions/">CONTRIBUTIONS</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/blog/">BLOG</a>
+                    </li>
+
+                     
+                     
+                    <li>
+                        <a class="page-scroll btn btn-xl" href="/login/" style="padding-top: 3px;padding-bottom: 3px;margin-top: 10px;">Login</a>
+                    </li>
+                    
+                  
                 </ul>
             </div>
-            <!--/.nav-collapse -->
+            <!-- /.navbar-collapse -->
         </div>
-        <!--/.container-fluid -->
+        <!-- /.container-fluid -->
     </nav>
-    <!-- <br />
-<p>
 
-</p> -->
-
-    <!-- <form class="login" method="POST" action="{% url 'account_login' %}">
+<!-- <form class="login" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
   <p><label for="id_login">Username/Email:</label> <input type="text" name="login" placeholder="Username/Email" required autofocus="autofocus" id="id_login" maxlength="150" /></p>
 <p><label for="id_password">Password:</label> <input type="password" name="password" placeholder="Password" required id="id_password" /></p>
 <p><label for="id_remember">Remember Me:</label> <input type="checkbox" name="remember" id="id_remember" /></p>
-
   <a class="button secondaryAction" href="{% url 'account_reset_password' %}">Forgot Password?</a>
   <button class="primaryAction" type="submit">Sign In</button>
 </form> -->
 
 
-    <!-- <a href="{% url 'account_signup' %}">Signup</a> -->
+<div class="login-box" style = "padding :0px; margin-bottom : 0px; margin-top : 6%;">
+            <div class="login-logo" style="font-size : 30px;">
+                <b>Alumni</b>Portal
+            </div>
+            <!-- /.login-logo -->
+            <div class="login-box-body" id="sign_in" style = "">
+                <p class="login-box-msg">Welcome to Alumni Portal</p>
+                <form class="login" method="POST" action="{% url 'account_login' %}">
 
-    <div class="wrapper">
-        <div>
-            <form class="form-signin" method="POST" action="{% url 'account_login' %}">
-                {% csrf_token %}
-                <h3 class="form-signin-heading">Login</h3>
-                {% include 'webapp/form_errors.html' %}
-                <div class="form-group">
-                    <label for="id_login">Username/Email:</label>
-                    <input class="form-control" type="text" name="login" placeholder="Username/Email" required autofocus="autofocus" id="id_login" maxlength="150" />
+                    <div class="form-group has-feedback">
+                        <input type="email" class="form-control" placeholder="Email" name = "email" required id="id_login">
+                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    </div>
+
+                    <div class="form-group has-feedback">
+                        <input type="password" class="form-control" placeholder="Password" name = "password" required id="id_password">
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+
+                     <div class="form-group ">
+                        <label for="id_remember">Remember Me:</label> <input type="checkbox" name="remember" id="id_remember" />
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-8">
+                             <a class="button secondaryAction" href="{% url 'account_reset_password' %}">Forgot Password ?</a>
+                            <br>
+            
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-xs-4">
+                            <button type="submit" class="primaryAction btn btn-primary btn-block btn-flat">Sign In</button>
+
+                        </div>
+                        <!-- /.col -->
+          
+                    </div>
+                </form>
+                <div class="social-auth-links text-center">
+                    <p>- OR -</p>
+                    <a href="{% url 'account_signup' %}" class="text-center btn btn-success btn-block" >Register a new membership</a>
+
+                    <a href="{% provider_login_url "linkedin" %}" class="primaryAction btn btn-social btn-facebook btn-flat btn-block">
+                        <i class="fa fa-linkedin"></i> Sign in using LinkedIn
+
+                    </a>
+                    <a href="/login/twitter/?next=" class="btn btn-block btn-social btn-twitter btn-flat">
+                        <i class="fa fa-twitter"></i> Sign in using Twitter
+                    </a>
                 </div>
-
-                <div class="form-group">
-                    <label for="id_password">Password:</label>
-                    <input type="password" class="form-control" name="password" placeholder="Password" required id="id_password" />
+                <!-- /.social-auth-links -->
+                <hr>
+                <div style = ";margin-left : -10px;">
+                    <div class = "row">
+                        <div class = "col-xs-2 col-xs-offset-1">
+                            <a href="#">About</a>
+                        </div>
+                        <div class = "col-xs-2">
+                            <a href="/#">Team</a>
+                        </div>
+                        <div class = "col-xs-2">
+                            <a href="#" style = "">Contact</a>
+                        </div>
+                        <div class = "col-xs-2">
+                            <a href="#" style = "padding-left : 10px;">FAQ</a>
+                        </div>
+                        <div class = "col-xs-2">
+                            <a href="#">Blog</a>
+                        </div>
+                        <!-- <div class = "col-xs-2" style = "margin-left : -13px;"><a href="/sitemap">Sitemap</a></div> -->
+        
+                    </div>
+                    <hr>
+                    <div class = "row">
+                        <div class = "col-xs-4 col-xs-offset-1">
+                            <a href="#">Privacy</a>
+                        </div>
+                        <div class = "col-xs-4">
+                            <a href="#">Terms</a>
+                        </div>
+                        <div class = "col-xs-3">
+                            <a href="#">Sitemap</a>
+                        </div>
+                    </div>
                 </div>
-                <label for="id_remember">Remember Me:</label>
-                <input type="checkbox" name="remember" id="id_remember" />
-                <div>
-                    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">Forgot Password?</a>
-                </div>
-
-                <button class="primaryAction btn btn-md btn-primary btn-block margin-ten" type="submit">Login</button>
-
-            </form>
-        </div>
-
-        <div class="form-signin-two">
-
-            <a href="{% provider_login_url "linkedin" %}" class="primaryAction btn btn-default btn-block">
-	  	<i class="fa fa-linkedin custom-css pull-left" aria-hidden="true"></i>Log in with LinkedIn
-	  </a>
-
-            <div class="margin-ten">
-                <p style="display: inline-block;">Need an account?</p> <a href="{% url 'account_signup' %}">Signup</a>
             </div>
 
-        </div>
+ </body>
 
-    </div>
-
-
-</body>
-
-</html>
+ </html>

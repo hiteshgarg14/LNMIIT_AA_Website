@@ -1,5 +1,8 @@
 body {
   /*background: #eee !important;*/
+
+  overflow-x: hidden;
+    font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 
 .wrapper {
@@ -200,3 +203,59 @@ ul.social-buttons li a {
   color: #ffffff;
   outline: 0;
   -webkit-transition: transform 2s,background 2s;
+}
+
+
+.navbar-custom {
+    background-color: transparent;
+    padding: 25px 0;
+    -webkit-transition: padding .3s;
+    -moz-transition: padding .3s;
+    transition: padding .3s;
+    border: none;
+}
+
+/*.navbar-custom .navbar-nav>.active>a {
+    border-radius: 0 !important;
+    color: #fff !important;
+    background-color: #fed136 !important;
+}*/
+
+.btn-xl {
+    color: #fff;
+    background-color: #fed136;
+    border-color: #fed136;
+    border-radius: 3px;
+    font-size: 18px;
+    padding: 10px 40px;
+}
+
+.hidden {
+    display: none!important;
+}
+
+
+.custom_background{
+
+  background-image: url('http://fosslnmiit.herokuapp.com/static/img/bg.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
+
+}
+
+.btn-divyanshu{
+
+  background-color:#00a65a;
+  color: white;
+
+}
+
+.affix {
+    position: fixed;
+}
+
+.navbar-custom.affix {
+    background-color: #222;
+    padding: 10px 0;
+}
+
