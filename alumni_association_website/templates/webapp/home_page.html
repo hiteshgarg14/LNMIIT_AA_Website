@@ -1,41 +1,50 @@
-
-<!-- {% load staticfiles %}
-{% load socialaccount %} -->
+{% load staticfiles %}
+{% load socialaccount %}
 <!DOCTYPE html>
 <html>
 <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <!-- jQuery library -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        <!-- <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet"> -->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'webapp/css/style.css' %}">
 
-        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <!-- <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/style.css' %}"> -->
-
-        <link rel="stylesheet" type="text/css" href="../../static/webapp/css/style.css">
+<link rel="stylesheet" type="text/css" href="../../static/webapp/css/style.css">
 </head>
+<body style="background-image: url('{% static 'webapp/images/body_background.png' %}')">
+<!--  {% if request.user.is_authenticated %}
+         {{  request.user.username }}
+     <a href="{% url 'webapp_logout' %}">logout</a>
+     {% if not linkedin_connected %}
+        Connect Account to <a href="{% provider_login_url "linkedin" %}">LinkedIn</a>
+    {% endif %}
+ {% else %}
+    <a href="{% url 'account_login' %}">Login/Signup</a>
 
-<body style="background-image: url('https://d1dp92jzo8lsgh.cloudfront.net/assets/website/testimonials-decor-27ba8db41a6c72bf25dc8ec127b2a603b25126343d0e5c171a5add6212cada54.png');">
+{% endif %} -->
 
 
 
-  <div class="">
+<div class="custom_background" style="border:0px solid black;width: 100%;" >
 
-       <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top affix-top">
-       
+
+	<div style="height: 800px;">
+
+<div>
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top affix-top">
+
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 <button type="button" style="color: white;" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only" ">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top"></a>
+                <a class="navbar-brand page-scroll" style="color: yellow;" href="#"><strong>Alumni Association | LNMIIT</strong></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -45,7 +54,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="../webapp/home_page.html">HOME</a>
+                        <a class="page-scroll" href="{% url 'webapp_home_page' %}">HOME</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#">EVENTS</a>
@@ -57,187 +66,224 @@
                         <a class="page-scroll" href="#">BLOG</a>
                     </li>
                     <li>
-                        <a class="page-scroll btn btn-xl" href="../account/login.html" style="padding-top: 3px;padding-bottom: 3px;margin-top: 10px;">Login</a>
+                        {% if request.user.is_authenticated %}
+                        <li>
+                             <div class="dropdown">
+                                  <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" style="padding-top: 3px;padding-bottom: 3px;margin-top: 10px;">{{ request.user.username }}
+                                  <span class="charset"></span></button>
+                                  <ul class="dropdown-menu">
+                                    <li><a href="{% url 'webapp_profile' %}">Profile</a></li>
+                                    <li><a href="{% url 'webapp_logout' %}">Logout</a></li>
+                                  </ul>
+                            </div>
+                        </li>
+                        {% else %}
+                          <a class="page-scroll btn btn-xl" href="{% url 'account_login' %}" style="padding-top: 3px;padding-bottom: 3px;margin-top: 10px;">Login</a>
+                        {% endif %}
                     </li>
-                    
-                  
+
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
     </nav>
-
-
-    <img src="http://fosslnmiit.herokuapp.com/static/img/bg.jpg" class="img-responsive">
-
   </div>
+<!--
+  <div style="text-align: center; padding: 16px 0px;position:relative;">
+        <div class="custom_style">
+          Almaconnect helps you connect with your school / college / organization’s alumni network
+        </div>
+
+      </div> -->
+
+<!-- 		<div style="padding-top:32px;">
+	        <div class="enlarged-dark-text">Build Engaging Communities
+				{% if request.user.is_authenticated %}
+				         {{  request.user.username }}
+				     <a href="{% url 'webapp_logout' %}">logout</a>
+				     {% if not linkedin_connected %}
+				        Connect Account to <a href="{% provider_login_url "linkedin" %}">LinkedIn</a>
+				    {% endif %}
+				 {% else %}
+				    <a href="{% url 'account_login' %}">Login/Signup</a>
+
+				{% endif %}
+			</div>
+	    </div> -->
+
 
 <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="border: 0px solid red;">
 
-  <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="border:0px solid black;margin-top: 5%;">
-      <div class="enlarged-light-text" ">
-          <div>Connecting over <span class="enlarged-dark-text">1,000,000+ alumni</span> </div>
-          <div>across <span class="enlarged-dark-text">2,000+ communities</span></div>
-        </div>
-  </div>
 
-  <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="border:0px solid black;background-color: radial-gradient(rgb(243,244,245));margin-top: 5%;">
+	</div>
+
+<!-- 	<div style="background-image:url('http://www.augusta.edu/alumni/images/alumni-hero-1.jpg');height: 625px;border:0px solid black;" class="margin-ten">
+	</div> -->
 
     <div style="border:0px solid red;width: 95%;margin:0 auto;">
 
-      <div class="card card-1">
+	<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="border:0px solid black;margin-top: 5%;">
+			<div class="enlarged-light-text">
+		      <div>Connecting over <span class="enlarged-dark-text">1,000,000+ alumni</span> </div>
+		      <div>across <span class="enlarged-dark-text">2,000+ communities</span></div>
+		    </div>
+	</div>
+s
 
-        <div class="flex" style="justify-content: center;height: 290px;">
-          <img src="https://yt3.ggpht.com/-HXcwA8OCaSU/AAAAAAAAAAI/AAAAAAAAAAA/RZnbzZK7m1M/s900-c-k-no-mo-rj-c0xffffff/photo.jpg" height="200" width="200">
+
+	<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="border:0px solid black;background-color: radial-gradient(rgb(243,244,245));margin-top: 5%;">
+
+		<div style="border:0px solid red;width: 85%;margin:0 auto;display: flex;">
+
+			<div class="card card-1">
+
+				<div class="flex" style="justify-content: center;height: 290px;">
+					<img src="https://yt3.ggpht.com/-HXcwA8OCaSU/AAAAAAAAAAI/AAAAAAAAAAA/RZnbzZK7m1M/s900-c-k-no-mo-rj-c0xffffff/photo.jpg" height="200" width="200">
+				</div>
+			</div>
+			<div class="card card-1">
+
+				<div class="flex" style="justify-content: center;height: 290px;">
+					<img src="https://yt3.ggpht.com/-Y8D6Fg-k6qc/AAAAAAAAAAI/AAAAAAAAAAA/9lU8yzk8H14/s900-c-k-no-mo-rj-c0xffffff/photo.jpg" height="200" width="200">
+				</div>
+
+
+			</div>
+			<div class="card card-1">
+
+				<div class="flex" style="justify-content: center;height: 290px;">
+					<img src="https://www.human.cornell.edu/themes/contrib/cornell/src/svg/seal-blk.svg" height="200" width="200">
+				</div>
+
+			</div>
+			<div class="card card-1">
+
+				<div class="flex" style="justify-content: center;height: 290px;">
+					<img src="http://collegeadmissioninfo.com/wp-content/uploads/2013/10/UPenn-Logo.gif" height="200" width="200">
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+	<!-- https://d1dp92jzo8lsgh.cloudfront.net/assets/website/Group%205-db94a11c1551e8ef57cb839d896bc14d8093fe2bbb1b53de2759e04007652a18.png -->
+
+
+	<!--
+
+
+	 -->
+
+<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="border:0px solid black;margin-top: 5%;">
+
+
+	<div class="col-lg-4 col-lg-offset-1">
+		<img src="https://d1dp92jzo8lsgh.cloudfront.net/assets/website/build-network-9451d9736eea1495f2f1dadfb47749c82a441e66f404db9b29304ed17ccc388c.png" class="img-responsive">
+	</div>
+
+	<div class="col-lg-offset-1 col-lg-6">
+	<div class="flex" style="height:600px;border: 0px solid black">
+
+      	<div class="col-lg-12">
+      	<div class=" content_heading">
+      		<span class="enlarged-dark-text">Build</span> and <span class="enlarged-dark-text">engage</span> your alumni network
+      	</div>
+      	<div class="text_body_light content_text">
+            Use AlmaConnect powerful tracking & invitation mechanism to find and get alumni, students &
+            faculty members join the network and always find their information updated on the platform.
         </div>
-      </div>
-      <div class="card card-1">
+       	</div>
 
-        <div class="flex" style="justify-content: center;height: 290px;">
-          <img src="https://yt3.ggpht.com/-Y8D6Fg-k6qc/AAAAAAAAAAI/AAAAAAAAAAA/9lU8yzk8H14/s900-c-k-no-mo-rj-c0xffffff/photo.jpg" height="200" width="200">
-        </div>
-
-
-      </div>
-      <div class="card card-1">
-
-        <div class="flex" style="justify-content: center;height: 290px;">
-          <img src="https://www.human.cornell.edu/themes/contrib/cornell/src/svg/seal-blk.svg" height="200" width="200">
-        </div>
-
-      </div>
-      <div class="card card-1">
-
-        <div class="flex" style="justify-content: center;height: 290px;">
-          <img src="http://collegeadmissioninfo.com/wp-content/uploads/2013/10/UPenn-Logo.gif" height="200" width="200">
-        </div>
-
-      </div>
-
-    </div>
-
-  </div> 
+	</div>
+	</div>
 </div>
-
-
-<div class="col-lg-12 col-md-12 col-xs-12">
-
-  <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="border:0px solid black;margin-top: 5%;">
-
-
-    <div class="col-lg-4 col-lg-offset-1">
-      <img src="https://d1dp92jzo8lsgh.cloudfront.net/assets/website/build-network-9451d9736eea1495f2f1dadfb47749c82a441e66f404db9b29304ed17ccc388c.png" class="img-responsive">
-    </div>
-
-    <div class="col-lg-offset-1 col-lg-6">
-    <div class="flex" style="height:600px;border: 0px solid black">
-
-          <div class="col-lg-12">
-          <div class=" content_heading">
-            <span class="enlarged-dark-text">Build engage your alumni network </span>
-          </div>
-          <div class="text_body_light content_text" style="font-family: 'Montserrat', sans-serif;font-size: 16px;">
-              Use Alumni powerful tracking & invitation mechanism to find and get alumni, students &
-              faculty members join the network and always find their information updated on the platform.
-          </div>
-          </div>
-
-    </div>
-    </div>
-
-  </div>
-
-  <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="border:0px solid black;">
-
-
-  <div class="col-lg-5 col-lg-offset-1">
-      <div class="flex" style="height:600px;border: 0px solid black">
-
-            <div class="col-lg-12">
-
-              <div class=" content_heading">
-                <span class="enlarged-dark-text">Consolidate your fragmented Alumni Network
-              </div>
-              <div class="text_body_light content_text" style="font-family: 'Montserrat', sans-serif;font-size: 16px;">
-
-                  AlmaConnect is deeply integrated with all social media points and help you build one consolidated and powerful
-                  channel to engage with your alumni is a primary point of contact catering to all your and their needs.
-
-              </div>
-            </div>
-
-      </div>  
-  </div>
-
-      <div class="col-lg-offset-1 col-lg-5">
-      <img src="https://d1dp92jzo8lsgh.cloudfront.net/assets/website/Group%205-db94a11c1551e8ef57cb839d896bc14d8093fe2bbb1b53de2759e04007652a18.png" class="img-responsive">
-    </div>
-
-
-  </div>
-
-
-
 
 <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="border:0px solid black;">
 
 
-  <div class="col-lg-4 col-lg-offset-1">
-    <img src="https://d1dp92jzo8lsgh.cloudfront.net/assets/website/mobile-apps-be9f4a115b486a5156bcab7832f30fbe9f91a85e30ceb679c7c07093fe1ac810.png" class="img-responsive">
-  </div>
+	<div class="col-lg-4 col-lg-offset-1">
+	<div class="flex" style="height:600px;border: 0px solid black">
 
-  <div class="col-lg-offset-1 col-lg-6">
-  <div class="flex" style="height:600px;border: 0px solid black">
+      	<div class="col-lg-12">
+      	<div class=" content_heading">
+      		<span class="enlarged-dark-text">Consolidate</span> your <span class="enlarged-dark-text">fragmented</span> Alumni Network
+      	</div>
+      	<div class="text_body_light content_text">
 
-        <div class="col-lg-12">
-        <div class=" content_heading">
-          <span class="enlarged-dark-text">
-            All your communities on the go
+            AlmaConnect is deeply integrated with all social media points and help you build one consolidated and powerful
+            channel to engage with your alumni is a primary point of contact catering to all your and their needs.
+
         </div>
-        <div class="text_body_light content_text" style="font-family: 'Montserrat', sans-serif;font-size: 16px;">
+       	</div>
+
+	</div>
+	</div>
+
+
+	<div class="col-lg-offset-1 col-lg-6 ">
+		<img src="https://d1dp92jzo8lsgh.cloudfront.net/assets/website/Group%205-db94a11c1551e8ef57cb839d896bc14d8093fe2bbb1b53de2759e04007652a18.png" class="img-responsive">
+	</div>
+
+</div>
+
+<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="border:0px solid black;">
+
+
+	<div class="col-lg-4 col-lg-offset-1">
+		<img src="https://d1dp92jzo8lsgh.cloudfront.net/assets/website/mobile-apps-be9f4a115b486a5156bcab7832f30fbe9f91a85e30ceb679c7c07093fe1ac810.png" class="img-responsive">
+	</div>
+
+	<div class="col-lg-offset-1 col-lg-6">
+	<div class="flex" style="height:600px;border: 0px solid black">
+
+      	<div class="col-lg-12">
+      	<div class=" content_heading">
+      		<span class="enlarged-dark-text">
+            All your communities </span> <span class="enlarged-dark-text"></span> on the go
+      	</div>
+      	<div class="text_body_light content_text">
 
             AlmaConnect helps connect with all your alumni communities on the go, Mobile App, Tablet, Website, Mobile
             Website, Facebook Application as well as email app. It allows alumni to do not adopt one more network and
             connect from where they are comfortable with.
 
         </div>
-        </div>
+       	</div>
 
-  </div>
-  </div>
+	</div>
+	</div>
+</div>
+
 </div>
 
 
-</div>
+<!-- <div class="container">
 
-<div class="col-lg-8 col-lg-offset-2 col-md-12 col-sm-12 col-xs-12">
+<div class="container" style="background-image: none;height: 300px;">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-  <div class="" style="border:0px solid red;margin-top:15px;"> 
-  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 395px;"> 
-    <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
 
-    <!-- Wrapper for slides -->
+
     <div class="carousel-inner">
       <div class="item active">
-        <img src="http://vesd.lnmiit.ac.in/images/sample/slider/img3.png" style="width:100%;height:390px;">
+        <img src="http://www.augusta.edu/alumni/images/alumni-hero-1.jpg" alt="Los Angeles" style="width:100%;">
       </div>
 
       <div class="item">
-        <img src="http://vesd.lnmiit.ac.in/images/sample/slider/img3.png" alt="Chicago" style="width:100%;height: 390px">
+        <img src="http://www.augusta.edu/alumni/images/alumni-hero-1.jpg" alt="Chicago" style="width:100%;">
       </div>
-    
-      <div class="item">
-        <img src="http://vesd.lnmiit.ac.in/images/sample/slider/img3.png" alt="New york" style="width:100%;height: 390px;">
-      </div>
+
+
     </div>
 
-    <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
       <span class="sr-only">Previous</span>
@@ -249,8 +295,22 @@
   </div>
 </div>
 
-  
-</div>
+<div style="position: relative;max-width:1280px;min-width:320px;margin:auto;padding:0px 8px;text-align:center;border: 0px solid black;margin-top: 20%;">
+    <div class="">
+      <div class="enlarged-light-text">
+        <div>Over <span class="enlarged-dark-text">80% of the communities</span> have improved</div>
+        <div>their alumni engagement considerably</div>
+      </div>
+      <div style="text-align: center; padding: 40px;">
+        <a class="ac_button" href="/institution_request/new" style="font-size: 18px;padding-top: 24px; height: 64px;
+            line-height: 18px; max-width: 380px; width: 100%; display: inline-block;">
+          Start building yours
+        </a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
 
 
 <div class="footer col-lg-12 col-md-12 col-sm-12 col-xs-12" style="position: relative;margin:auto;padding:0px 8px;">
@@ -304,42 +364,54 @@
 <div class="nav navbar-nav" style="padding: 40px 10px;">
                      <ul class="list-inline">
                       <li>
-                        <a href="#">
-                  <i class="fa fa-2x fa-linkedin custom-css" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li>
-                        <a href="#">
-                  <i class="fa fa-2x fa-facebook custom-css" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li>
-                        <a href="#">
-                  <i class="fa fa-2x fa-twitter custom-css" aria-hidden="true"></i>
-                </a>
-              </li>
-              <!-- <li>
-                        <a href="#">
-                  <i class="fa fa-2x fa-google-plus custom-css" aria-hidden="true"></i>
-                </a>
-              </li> -->
+                      	<a href="#">
+				        	<i class="fa fa-2x fa-linkedin custom-css" aria-hidden="true"></i>
+				  	    </a>
+				  	  </li>
+				  	  <li>
+                      	<a href="#">
+				        	<i class="fa fa-2x fa-facebook custom-css" aria-hidden="true"></i>
+				  	    </a>
+				  	  </li>
+				  	  <li>
+                      	<a href="#">
+				        	<i class="fa fa-2x fa-twitter custom-css" aria-hidden="true"></i>
+				  	    </a>
+				  	  </li>
+				  	  <!-- <li>
+                      	<a href="#">
+				        	<i class="fa fa-2x fa-google-plus custom-css" aria-hidden="true"></i>
+				  	    </a>
+				  	  </li> -->
                      </ul>
-                  
+                  </div>
     </div>
 
 
     <div class="hide_below_560" style="position:absolute;right:20px;bottom:0px;max-width:156px;width:100%;margin-top:32px;">
       <img src="https://d1dp92jzo8lsgh.cloudfront.net/assets/website/footer-decor-2-713a51371d4c81d3ede14692baebd55c0c4a38abfde92731b1595f51dd8b817b.png" style="max-width:140px;">
     </div>
+
   </div>
-</div>
+
+
+
+
+
 
 </body>
 
-
+ <!-- Theme JavaScript -->
     <script src="../../static/webapp/js/scroll.js"></script>
 
 
 </html>
 
+<!-- Latest compiled and minified CSS -->
 
+
+<!-- jQuery library -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+<!-- Latest compiled JavaScript -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->

@@ -1,0 +1,9 @@
+{% load staticfiles %}
+{% load socialaccount %}
+{% if request.user.is_authenticated %}
+         {{  request.user.username }} <br /><br />
+     <a href="{% url 'webapp_logout' %}">logout</a>  <br /><br />
+     {% if not linkedin_connected %}
+        Connect Account to <a href="{% provider_login_url "linkedin" %}">LinkedIn</a>
+    {% endif %}
+{% endif %}
