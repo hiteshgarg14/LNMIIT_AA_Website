@@ -237,7 +237,7 @@ ul.social-buttons li a {
 
 .custom_background{
 
-  background-image: url('http://fosslnmiit.herokuapp.com/static/img/bg.jpg') !important;
+  background-image: url('../images/bg.jpg') !important;
   background-repeat:no-repeat;
   background-size:cover;
 
@@ -274,7 +274,14 @@ ul.social-buttons li a {
 
 .page-scroll:hover{
 
-    color: white !important;
+  background: url('http://fosslnmiit.herokuapp.com/static/img/bg.jpg');
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
+  height:800px;
+  border:1px solid red;
+  width: 100%;'
+color: white !important;
 
 }
 
@@ -295,6 +302,7 @@ ul.social-buttons li a {
     padding-left: 6px;
 }
 
+
 .so-btn:hover{
   background-color: #fed136;
 }
@@ -314,4 +322,3 @@ ul.social-buttons {
     padding-right: 5px;
     padding-left: 5px;
 }
-
