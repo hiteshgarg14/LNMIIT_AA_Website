@@ -237,7 +237,7 @@ ul.social-buttons li a {
 
 .custom_background{
 
-  background-image: url('http://fosslnmiit.herokuapp.com/static/img/bg.jpg') !important;
+  background-image: url('../images/bg.jpg') !important;
   background-repeat:no-repeat;
   background-size:cover;
 
@@ -281,7 +281,7 @@ ul.social-buttons li a {
   height:800px;
   border:1px solid red;
   width: 100%;'
- 
+
 
 }
 */
