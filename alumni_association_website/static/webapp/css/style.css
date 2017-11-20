@@ -272,7 +272,7 @@ ul.social-buttons li a {
   color: white !important;
 }
 
-/*.main_page_img_src{
+.page-scroll:hover{
 
   background: url('http://fosslnmiit.herokuapp.com/static/img/bg.jpg');
   background-repeat:no-repeat;
@@ -281,7 +281,44 @@ ul.social-buttons li a {
   height:800px;
   border:1px solid red;
   width: 100%;'
-
+color: white !important;
 
 }
-*/
+
+ul.social-buttons li a {
+    display: block;
+    background-color: #222;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    border: none;
+    font-size: 20px;
+    line-height: 40px;
+    color: #fff;
+    outline: 0;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+    padding-left: 6px;
+}
+
+
+.so-btn:hover{
+  background-color: #fed136;
+}
+
+ul.social-buttons {
+    margin-bottom: 0;
+}
+
+.list-inline {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+}
+
+.list-inline>li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
