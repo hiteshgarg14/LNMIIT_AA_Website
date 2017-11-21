@@ -1,3 +1,5 @@
+{% load staticfiles %}
+{% load socialaccount %}
 
 <!DOCTYPE html>
 
@@ -5,10 +7,7 @@
 
 <head>
 
-     <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <!-- jQuery library -->
 
-    <script src="../../bower_components/jquery/dist/jquery.js"></script>
 
     <!-- Latest compiled JavaScript -->
     <script src="../../bower_components/bootstrap/dist/css/js/bootstrap.min.js"></script>
@@ -26,9 +25,9 @@
 </head>
 
 <body id="page-top" class="index">
-   
+
     <!-- Navigation -->
-     
+
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top" style="background-color: #222;padding-bottom: 0px;padding-top: 5px;margin-bottom: 10px;">
 
         <div class="container">
@@ -37,7 +36,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top" >Alumni Portal</a>
+                <a class="navbar-brand page-scroll" style="color: yellow;" href="#"><strong>Alumni Association | LNMIIT</strong></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -47,25 +46,25 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a  class="page-scroll" href="/">HOME</a>
+                        <a  class="page-scroll" href="{% url 'webapp_home_page' %}">HOME</a>
                     </li>
                     <li>
-                        <a  class="page-scroll" href="/events/">EVENTS</a>
+                        <a  class="page-scroll" href="{% url 'webapp_event' %}">EVENTS</a>
                     </li>
                     <li>
-                        <a  class="page-scroll" href="/contributions/">CONTRIBUTIONS</a>
+                        <a  class="page-scroll" href="#">GALLARY</a>
                     </li>
                     <li>
-                        <a  class="page-scroll" href="/blog/">BLOG</a>
+                        <a  class="page-scroll" href="{% url 'webapp_blog' %}">BLOG</a>
                     </li>
 
-                     
-                     
+
+
                     <li>
-                        <a class="page-scroll btn btn-xl" href="/login/" style="padding-top: 3px;padding-bottom: 3px;margin-top: 10px;">Login</a>
+                        <a class="page-scroll btn btn-xl" href="{% url 'account_login' %}" style="padding-top: 3px;padding-bottom: 3px;margin-top: 10px;">Login</a>
                     </li>
-                    
-                  
+
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -74,17 +73,17 @@
     </nav>
 <div class="wrapper">
 
-    
+
 
 <div class="container">
 	<br><br><br><br>
 	<hgroup class="mb20">
-		<h1>All Blogs</h1>
+
 	</hgroup>
     <section class="col-xs-12 col-sm-6 col-md-12" style="padding-top: 10px;">
-		
-		<p>No Blogs yet !     Stay Tuned.</p>
-	
+
+		<img src="{% static 'webapp/images/coming_soon.jpg' %}" />
+
 	</section>
 </div>
 
@@ -157,7 +156,7 @@
   </div>
 
 <script src="../../static/webapp/js/scroll.js"></script>
-    
+
 </body>
 
 </html>
