@@ -272,7 +272,7 @@ ul.social-buttons li a {
   color: white !important;
 }
 
-.page-scroll:hover{
+/*.page-scroll:hover{
 
   background: url('http://fosslnmiit.herokuapp.com/static/img/bg.jpg');
   background-repeat:no-repeat;
@@ -283,7 +283,7 @@ ul.social-buttons li a {
   width: 100%;'
 color: white !important;
 
-}
+}*/
 
 ul.social-buttons li a {
     display: block;
