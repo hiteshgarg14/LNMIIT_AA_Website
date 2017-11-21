@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from allauth.account.views import PasswordSetView, PasswordChangeView
 from django.urls import reverse_lazy, reverse
 from allauth.socialaccount.models import SocialAccount
+from webapp.models import Event
 
 
 def is_linkedin_connected(user):
@@ -31,6 +32,15 @@ def profile(request):
 	return render(request, 'webapp/profile.html',
 			{'linkedin_connected': linkedin_connected})
 
+
+
+def blog(request):
+	return render(request, 'webapp/blog.html')
+
+
+def event(request):
+	events = Event.objects.all().order_by('-datetime')
+	return render(request, 'webapp/events.html', {'events': events})
 
 class CustomPasswordSetView(PasswordSetView):
 

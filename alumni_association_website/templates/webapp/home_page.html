@@ -58,13 +58,13 @@
                         <a class="page-scroll" href="{% url 'webapp_home_page' %}">HOME</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">EVENTS</a>
+                        <a class="page-scroll" href="{% url 'webapp_event' %}">EVENTS</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#">GALLERY</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">BLOG</a>
+                        <a class="page-scroll" href="{% url 'webapp_blog' %}">BLOG</a>
                     </li>
                     <li>
                         {% if request.user.is_authenticated %}

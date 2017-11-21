@@ -1,4 +1,5 @@
-
+{% load staticfiles %}
+{% load socialaccount %}
 
 <!DOCTYPE html>
 
@@ -19,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/style.css' %}"> -->
     <!-- Latest compiled and minified CSS -->
-     
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Latest compiled JavaScript -->
@@ -32,7 +33,7 @@
      <link rel="stylesheet" href="../../static/webapp/css/app.min.css">
         <!-- iCheck -->
      <link rel="stylesheet" href="../../static/webapp/css/blue.css">
-    
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,9 +45,9 @@
 </head>
 
 <body id="page-top" class="index">
-   
+
     <!-- Navigation -->
-     
+
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top" style="background-color: #222;padding-bottom: 0px;padding-top: 5px;margin-bottom: 10px;">
 
         <div class="container">
@@ -55,7 +56,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top" style="font-weight: bold;">Alumni Portal</a>
+                <a class="navbar-brand page-scroll" style="color: yellow;" href="#"><strong>Alumni Association | LNMIIT</strong></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -65,25 +66,38 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a  class="page-scroll" href="/">HOME</a>
+                        <a  class="page-scroll" href="{% url 'webapp_home_page' %}">HOME</a>
                     </li>
                     <li>
-                        <a  class="page-scroll" href="/events/">EVENTS</a>
+                        <a  class="page-scroll" href="{% url 'webapp_event' %}">EVENTS</a>
                     </li>
                     <li>
-                        <a  class="page-scroll" href="/contributions/">CONTRIBUTIONS</a>
+                        <a  class="page-scroll" href="/contributions/">GALLERY</a>
                     </li>
                     <li>
-                        <a  class="page-scroll" href="/blog/">BLOG</a>
+                        <a  class="page-scroll" href="{% url 'webapp_blog' %}">BLOG</a>
                     </li>
 
-                     
-                     
+
+
                     <li>
-                        <a class="page-scroll btn btn-xl" href="/login/" style="padding-top: 3px;padding-bottom: 3px;margin-top: 10px;">Login</a>
+                        {% if request.user.is_authenticated %}
+                            <li>
+                                 <div class="dropdown">
+                                      <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" style="padding-top: 3px;padding-bottom: 3px;margin-top: 10px;">{{ request.user.username }}
+                                      <span class="charset"></span></button>
+                                      <ul class="dropdown-menu">
+                                        <li><a href="{% url 'webapp_profile' %}">Profile</a></li>
+                                        <li><a href="{% url 'webapp_logout' %}">Logout</a></li>
+                                      </ul>
+                                </div>
+                            </li>
+                            {% else %}
+                              <a class="page-scroll btn btn-xl" href="{% url 'account_login' %}" style="padding-top: 3px;padding-bottom: 3px;margin-top: 10px;">Login</a>
+                            {% endif %}
                     </li>
-                    
-                  
+
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -92,159 +106,36 @@
     </nav>
 <!-- <div class="wrapper"> -->
 
-    
+
 
 
 <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="border:0px solid black;background-color: radial-gradient(rgb(243,244,245));margin-top: 5%;">
 
 
         <div style="border:0px solid red;width: 85%;margin:0 auto;display: flex;">
-
+            {% for event in events %}
             <div class="card card-1">
 
                 <div style="margin-top: 25%;border: 0px solid red;height: 100px;">
-                    <h3 style="text-align: center;">Delhi Chapter Meet</h3>
+                    <h3 style="text-align: center;">{{ event.title }}</h3>
                 </div>
 
             <div style="margin-top: 10%">
                 <div style="border: 0px solid red;padding: 10px;">
-                    <i class="fa fa-clock-o"></i> Dec 10, 2016
+                    <i class="fa fa-clock-o"></i> {{ event.datetime }}
                 </div>
 
                  <div style="border: 0px solid red;margin-top:2px;padding: 10px;">
-                   <i class="fa fa-map-marker"></i> The LNMIIT
+                   <i class="fa fa-map-marker"></i> {{ event.venue }}
                 </div>
             </div>
             </div>
-            <div class="card card-1">
-
-                 
-
-                  <div style="margin-top: 25%;border: 0px solid red;height: 100px;">
-                    <h3 style="text-align: center;">Alumni Meet</h3>
-                </div>
-
-                <div style="border: 0px solid red;margin-top: 10%;padding: 10px;">
-                    <i class="fa fa-clock-o"></i> Dec 10, 2016
-                </div>
-
-                 <div style="border: 0px solid red;margin-top:2px;padding: 10px;">
-                   <i class="fa fa-map-marker"></i> The LNMIIT
-                </div>
-
-
-            </div>
-            <div class="card card-1">
-
-               
-
-                 <div style="margin-top: 25%;border: 0px solid red;height: 100px;">
-                     <h3 style="text-align: center;">Talk by Prateel Goel</h3>
-                </div>
-
-                <div style="border: 0px solid red;margin-top: 10%;padding: 10px;">
-                    <i class="fa fa-clock-o"></i> Dec 10, 2016
-                </div>
-
-                 <div style="border: 0px solid red;margin-top:2px;padding: 10px;">
-                   <i class="fa fa-map-marker"></i> The LNMIIT
-                </div>
-
-            </div>
-            <div class="card card-1">
-
-                 
-
-                  <div style="margin-top: 25%;border: 0px solid red;height: 100px;">
-                     <h3 style="text-align: center;">Career in Merchant Navy - Shalabh Gupta</h3>
-                </div>
-
-                <div style="border: 0px solid red;margin-top: 10%;padding: 10px;">
-                    <i class="fa fa-clock-o"></i> Dec 10, 2016
-                </div>
-
-                 <div style="border: 0px solid red;margin-top:2px;padding: 10px;">
-                   <i class="fa fa-map-marker"></i> The LNMIIT
-                </div>
-
-            </div>
+            {% endfor %}
 
         </div>
 
 
-             <div style="border:0px solid red;width: 85%;margin:0 auto;display: flex;">
 
-            <div class="card card-1">
-
-                <div style="margin-top: 25%;border: 0px solid red;height: 100px;">
-                     <h3 style="text-align: center;">Informal session with Divyanshu Pandey</h3>
-                </div>
-
-                 
-
-                <div style="border: 0px solid red;margin-top: 10%;padding: 10px;">
-                    <i class="fa fa-clock-o"></i> Dec 10, 2016
-                </div>
-
-                 <div style="border: 0px solid red;margin-top:2px;padding: 10px;">
-                   <i class="fa fa-map-marker"></i> The LNMIIT
-                </div>
-
-            </div>
-            <div class="card card-1">
-
-               
-
-                <div style="margin-top: 25%;border: 0px solid red;height: 100px;">
-                      <h3 style="text-align: center;margin-top: 10%;">A session with Kush Gupta and Siddhant Agarwal</h3>
-                </div>
-
-                <div style="border: 0px solid red;padding: 10px;">
-                    <i class="fa fa-clock-o"></i> Dec 10, 2016
-                </div>
-
-                 <div style="border: 0px solid red;margin-top:2px;padding: 10px;">
-                   <i class="fa fa-map-marker"></i> The LNMIIT
-                </div>
-
-
-            </div>
-            <div class="card card-1">
-
-                 
-
-                  <div style="margin-top: 25%;border: 0px solid red;height: 100px;">
-                      <h3 style="text-align: center;margin-top: 10%;">Talk on Robotics by Nived Chebrolu</h3>
-                </div>
-
-                <div style="border: 0px solid red;padding: 10px;">
-                    <i class="fa fa-clock-o"></i> Dec 10, 2016
-                </div>
-
-                 <div style="border: 0px solid red;margin-top:2px;padding: 10px;">
-                   <i class="fa fa-map-marker"></i> The LNMIIT
-                </div>
-
-            </div>
-            <div class="card card-1">
-
-                 
-
-                 <div style="margin-top: 25%;border: 0px solid red;height: 100px;">
-                      <h3 style="text-align: center;margin-top: 10%;">Talk by Sagar Tandon</h3>
-                </div>
-
-                <div style="border: 0px solid red;padding: 10px;">
-                    <i class="fa fa-clock-o"></i> Dec 10, 2016
-                </div>
-
-                 <div style="border: 0px solid red;margin-top:2px;padding: 10px;">
-                   <i class="fa fa-map-marker"></i> The LNMIIT
-                </div>
-
-            </div>
-
-        </div>
 
     </div>
 <!-- </div> -->
@@ -255,7 +146,7 @@
            <div class="card_enlarge card-1 ">
 
             <div class="col-lg-12" style="border: 0px solid black;margin-top: 10%;">
-               
+
                 <div class="col-lg-6" style="border:0px solid red">
 
                     <img src="https://alumni.lnmiit.ac.in/images/AjaySinghRathore.png" class = "img-responsive"  style="border-radius:100%;">
@@ -274,7 +165,7 @@
             </div>
 
             <div class="col-lg-12" style="margin-top: 5%;">
-                
+
                 <p>
                     "LNMIITians as a part of big family have this shared identity of being treated with similar values in same milieu. Knowingly or unknowingly, we imbue these values in the world around us. At the same time undergoing through similar hardships and challenges. I'm glad to acknowledge that AA has done a great job in providing a platform to share our narratives which are proving to be helpful for coming batches and making alum realize growing strength of the institute."
 
@@ -289,7 +180,7 @@
         <div class="card_enlarge card-1 ">
 
             <div class="col-lg-12" style="border: 0px solid black;margin-top: 10%;">
-               
+
                 <div class="col-lg-6" style="border:0px solid red">
 
                     <img src="https://alumni.lnmiit.ac.in/images/KushalShah.png" class =  "img-responsive" style="border-radius:100%;">
@@ -308,7 +199,7 @@
             </div>
 
             <div class="col-lg-12" style="margin-top: 5%;">
-                
+
                 <p>
                     "Alumni are the true ambassadors of any university, because whatever we do in our respective fields is going to affect not only to our families, but to families of innumerable unknown juniors. Initiatives like these give alumni the sense of being and the comprehension of giving back to the place that made them who they are. It is also a wonderful source of inspiration to students struggling to make a mark, to interact and learn from their seniors who once maybe were in a similar situation as they are now. My best wishes to faculties and the student communities for this commendable initiative."
 
@@ -323,7 +214,7 @@
         <div class="card_enlarge card-1 ">
 
             <div class="col-lg-12" style="border: 0px solid black;margin-top: 10%;">
-               
+
                 <div class="col-lg-6" style="border:0px solid red">
 
                     <img src="https://alumni.lnmiit.ac.in/images/JatinSharma.png" class = "img-responsive" style="border-radius:100%;">
@@ -342,7 +233,7 @@
             </div>
 
             <div class="col-lg-12" style="margin-top: 5%;">
-                
+
                 <p>
                     "Alumni are the face of a University. Every prestigious University in this world is well connected with the rest of the world, be it corporate or academia, through this strong network. The institution imparts its best to the young bright student and years after the same student pays back through his continuous engagement and support. LNMIIT has grown from a beautiful small campus to something much bigger. It has got a highly respected alumni network and an active alumni association. This is just the beginning…"
 
@@ -424,7 +315,7 @@
   </div>
 
 <script src="../../static/webapp/js/scroll.js"></script>
-    
+
 </body>
 
 </html>
